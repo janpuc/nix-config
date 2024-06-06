@@ -1,5 +1,4 @@
-{ user, ... }:
-{
+{user, ...}: {
   # import sub modules
   imports = [
     ./core.nix

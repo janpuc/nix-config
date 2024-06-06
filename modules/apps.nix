@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     git
   ];
@@ -20,5 +19,4 @@
       "microsoft-teams"
     ];
   };
-
 }

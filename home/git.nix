@@ -4,8 +4,7 @@
   user,
   email,
   ...
-}:
-let
+}: let
   sshPub = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKxcKV1Iao/IzHzbHUGaUKocgDR6WG3w5SA64U6cd8Nk";
 in {
   # `programs.git` will generate the config file: ~/.config/git/config

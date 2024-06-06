@@ -1,9 +1,8 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
-
     _1password
-    bat  # modern replacement for cat
+    alejandra
+    bat # modern replacement for cat
 
     # Apps
     rectangle

@@ -31,7 +31,7 @@
     homebrew-cask = {
       url = "github:homebrew/homebrew-cask";
       flake = false;
-    }; 
+    };
   };
 
   outputs = inputs @ {

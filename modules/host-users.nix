@@ -1,5 +1,8 @@
-{ hostname, user, ... }:
 {
+  hostname,
+  user,
+  ...
+}: {
   networking.hostName = hostname;
   networking.computerName = hostname;
   system.defaults.smb.NetBIOSName = hostname;
@@ -9,5 +12,5 @@
     description = user;
   };
 
-  nix.settings.trusted-users = [ user ];
+  nix.settings.trusted-users = [user];
 }

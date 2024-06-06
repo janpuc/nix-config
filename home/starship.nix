@@ -1,9 +1,8 @@
-{ ... }:
-{
+{...}: {
   programs.starship = {
     enable = true;
 
-    enableZshIntegration =  true;
+    enableZshIntegration = true;
 
     settings = {
       format = "[](bg:#030B16 fg:#7DF9AA)[󰀵 ](bg:#7DF9AA fg:#090c0c)[](fg:#7DF9AA bg:#1C3A5E)$time[](fg:#1C3A5E bg:#3B76F0)$directory[](fg:#3B76F0 bg:#FCF392)$git_branch$git_status$git_metrics[](fg:#FCF392 bg:#030B16)$character";
@@ -48,7 +47,7 @@
 
       time = {
         disabled = false;
-        time_format = "%R";  # Hour:Minute Format
+        time_format = "%R"; # Hour:Minute Format
         style = "bg:#1d2230";
         format = "[[ 󱑍 $time ](bg:#1C3A5E fg:#8DFBD2)]($style)";
       };
