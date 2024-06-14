@@ -10,6 +10,8 @@
       # nix
       bbenoist.nix # nix LSP
       kamadorueda.alejandra # nix linter
+      # yaml
+      redhat.vscode-yaml # yaml LSP
     ];
 
     userSettings = {
@@ -23,6 +25,8 @@
         "editor.formatOnSave" = true;
         "editor.formatOnType" = false;
       };
+      # misc
+      "redhat.telemetry.enabled" = false;
     };
   };
 }

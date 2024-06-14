@@ -6,10 +6,17 @@
     # bashrcExtra = ''
     #   export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
     # '';
-
     envExtra = ''
       export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
     '';
+
+    zsh-abbr = {
+      enable = true;
+
+      abbreviations = {
+        f = "flux";
+      };
+    };
   };
 
   home.sessionVariables = {
@@ -24,8 +31,8 @@
     "....." = "cd ../../../..";
     "......" = "cd ../../../../..";
 
-    egrep = "egrep -E";
-    fgrep = "fgrep -F";
+    egrep = "grep -E";
+    fgrep = "grep -F";
 
     du = "du -c";
     dud = "du -d 1 -h";

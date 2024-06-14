@@ -15,6 +15,7 @@
     casks = [
       "1password"
       "arc"
+      "keepingyouawake"
       "messenger"
       "microsoft-teams"
     ];
