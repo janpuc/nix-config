@@ -2,7 +2,6 @@
   lib,
   config,
   user,
-  email,
   ...
 }: let
   sshPub = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKxcKV1Iao/IzHzbHUGaUKocgDR6WG3w5SA64U6cd8Nk";
@@ -15,7 +14,7 @@ in {
   #   rm -f ~/.gitconfig
   # '';
 
-  home.file.".ssh/allowed_signers".text = "${email} ${sshPub}\n";
+  home.file.".ssh/allowed_signers".text = "${user.email} ${sshPub}\n";
 
   programs.gh = {
     enable = true;
@@ -26,8 +25,8 @@ in {
 
   programs.git = {
     enable = true;
-    userName = user;
-    userEmail = email;
+    userName = user.github;
+    userEmail = user.email;
     lfs = {
       enable = true;
     };

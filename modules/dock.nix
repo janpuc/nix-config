@@ -20,7 +20,7 @@
           "${pkgs.utm}/Applications/UTM.app"
         ];
 
-        persistent-others = ["/Users/${user}/Downloads"];
+        persistent-others = ["/Users/${user.name}/Downloads"];
       };
     };
   };

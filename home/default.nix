@@ -14,8 +14,10 @@
   ];
 
   home = {
-    username = user;
-    homeDirectory = "/Users/${user}";
+    username = user.name;
+    homeDirectory = "/Users/${user.name}";
+
+    preferXdgDirectories = true;
 
     stateVersion = "24.05";
   };

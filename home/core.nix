@@ -7,6 +7,7 @@
     retry # helper for commands that can timeout
     saml2aws # login to aws using saml
     kubectl # kubernetes cli
+    kubectx # k8s cluster switch
 
     # Apps
     rectangle # window management
@@ -21,5 +22,6 @@
     wezterm
     # _1password-gui  # TODO: need to move to /Applications after install, now it's broken
     utm
+    zoom-us
   ];
 }

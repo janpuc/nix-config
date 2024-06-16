@@ -3,6 +3,8 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
     # bashrcExtra = ''
     #   export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
     # '';
@@ -14,7 +16,7 @@
       enable = true;
 
       abbreviations = {
-        f = "flux";
+        g = "git";
       };
     };
   };

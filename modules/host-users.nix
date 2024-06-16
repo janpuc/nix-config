@@ -7,10 +7,10 @@
   networking.computerName = hostname;
   system.defaults.smb.NetBIOSName = hostname;
 
-  users.users."${user}" = {
-    home = "/Users/${user}";
-    description = user;
+  users.users."${user.name}" = {
+    home = "/Users/${user.name}";
+    description = user.name;
   };
 
-  nix.settings.trusted-users = [user];
+  nix.settings.trusted-users = [user.name];
 }

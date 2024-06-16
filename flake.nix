@@ -45,14 +45,17 @@
     home-manager,
     ...
   }: let
-    user = "janpuc";
-    email = "janpuc@proton.me";
+    user = {
+      name = "jan.pucilowski";
+      github = "janpuc";
+      email = "janpuc@proton.me";
+    };
     system = "aarch64-darwin";
-    hostname = "${user}-vm";
+    hostname = "${user.name}-mbp";
     specialArgs =
       inputs
       // {
-        inherit user email hostname;
+        inherit user hostname;
       };
   in {
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
@@ -69,12 +72,12 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users.${user} = import ./home;
+          home-manager.users.${user.name} = import ./home;
         }
         nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
-            user = user;
+            user = user.name;
             enable = true;
             taps = {
               "homebrew/homebrew-core" = homebrew-core;
