@@ -6,6 +6,7 @@
     ./git.nix
     ./lsd.nix
     ./oh-my-posh.nix
+    ./op.nix
     ./shell.nix
     ./ssh.nix
     ./starship.nix

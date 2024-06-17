@@ -32,6 +32,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    _1password-shell-plugins = {
+      url = "github:1Password/shell-plugins";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
+    };
   };
 
   outputs = inputs @ {
@@ -51,15 +55,16 @@
       email = "janpuc@proton.me";
     };
     system = "aarch64-darwin";
-    hostname = "${user.name}-mbp";
-    specialArgs =
-      inputs
-      // {
-        inherit user hostname;
-      };
+    hostname = "janpuc-mbp";
+    specialArgs = {
+      inherit inputs user hostname;
+    };
   in {
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
       inherit system specialArgs;
+      # extraSpecialArgs = {
+      #   inherit inputs;
+      # };
       modules = [
         ./modules/nix-core.nix
         ./modules/system.nix

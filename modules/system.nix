@@ -222,8 +222,8 @@
         FirstClickThreshold = 1; # set click threshold to medium
         SecondClickThreshold = 1; # set force click threshold to medium
         TrackpadRightClick = true; # enable two finger right click
-        TrackpadThreeFingerDrag = true; # enable three finger drag
-        TrackpadThreeFingerTapGesture = 2; # enable three finger tap
+        #        TrackpadThreeFingerDrag = true; # enable three finger drag
+        #        TrackpadThreeFingerTapGesture = 2; # enable three finger tap
       };
 
       # Customize settings that not supported by nix-darwin directly
@@ -274,14 +274,7 @@
   time.timeZone = "Europe/Warsaw";
 
   fonts = {
-    # will be removed after this PR is merged:
-    #   https://github.com/LnL7/nix-darwin/pull/754
-    fontDir.enable = true;
-
-    # will change to `fonts.packages` after this PR is merged:
-    #   https://github.com/LnL7/nix-darwin/pull/754
-    fonts = with pkgs; [
-      # packages = with pkgs; [
+    packages = with pkgs; [
       material-design-icons
       font-awesome
 

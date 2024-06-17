@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    _1password # op cli tool
+    # _1password # op cli tool
     alejandra # nix linter
     bat # modern replacement for cat
     gawk # gnu implementation of awk
@@ -8,6 +8,7 @@
     saml2aws # login to aws using saml
     kubectl # kubernetes cli
     kubectx # k8s cluster switch
+    just # easier makefile
 
     # Apps
     rectangle # window management

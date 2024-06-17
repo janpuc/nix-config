@@ -12,6 +12,8 @@
       kamadorueda.alejandra # nix linter
       # yaml
       redhat.vscode-yaml # yaml LSP
+      # misc
+      skellock.just # justfile lint
     ];
 
     userSettings = {
