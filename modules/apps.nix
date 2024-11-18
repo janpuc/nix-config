@@ -1,8 +1,4 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    git
-  ];
-
   homebrew = {
     enable = true;
 
@@ -15,9 +11,13 @@
     casks = [
       "1password"
       "arc"
-      # "keepingyouawake" # don't need it for now
+      "orbstack"
+      "obsidian"
+      "whisky"
       "messenger"
       "microsoft-teams"
+      "microsoft-auto-update"
+      "steam"
     ];
   };
 }

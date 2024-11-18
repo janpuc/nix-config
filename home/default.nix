@@ -4,12 +4,12 @@
     ./aws.nix
     ./core.nix
     ./git.nix
+    ./js.nix
     ./lsd.nix
     ./oh-my-posh.nix
     ./op.nix
     ./shell.nix
     ./ssh.nix
-    ./starship.nix
     ./vscode.nix
     ./zoxide.nix
   ];

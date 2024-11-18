@@ -1,58 +1,63 @@
-{...}: {
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+{
+  config,
+  pkgs,
+  ...
+}: {
+  home = {
+    sessionVariables = {
+      HOMEBREW_NO_ANALYTICS = "1";
+      MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+      SSH_AUTH_SOCK = "~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock";
+    };
 
-    # bashrcExtra = ''
-    #   export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
-    # '';
-    envExtra = ''
-      export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-    '';
+    shellAliases = {
+      reload = "exec $SHELL -l";
 
-    zsh-abbr = {
-      enable = true;
+      "..." = "cd ../..";
+      "...." = "cd ../../..";
+      "....." = "cd ../../../..";
+      "......" = "cd ../../../../..";
 
-      abbreviations = {
-        g = "git";
-      };
+      egrep = "grep -E";
+      fgrep = "grep -F";
+
+      du = "du -c";
+      dud = "du -d 1 -h";
+      duf = "du -sh *";
+      h = "history";
+      sortnr = "sort -n -r";
+      unexport = "unset";
+      rm = "rm -i";
+      cp = "cp -i";
+      mv = "mv -i";
+
+      cat = "bat -pp";
+      less = "bat --paging=always";
+
+      code = "codium";
+
+      k = "kubectl";
+      kx = "kubectx";
+      ku = "kubectx -u";
     };
   };
 
-  home.sessionVariables = {
-    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
-  };
+  programs.fish = {
+    enable = true;
 
-  home.shellAliases = {
-    reload = "exec $SHELL -l";
+    shellAbbrs = {
+      g = "git";
+    };
 
-    "..." = "cd ../..";
-    "...." = "cd ../../..";
-    "....." = "cd ../../../..";
-    "......" = "cd ../../../../..";
+    shellAliases = {
+    };
 
-    egrep = "grep -E";
-    fgrep = "grep -F";
+    shellInit = ''
+      set -U fish_term24bit 1
+    '';
 
-    du = "du -c";
-    dud = "du -d 1 -h";
-    duf = "du -sh *";
-    h = "history";
-    sortnr = "sort -n -r";
-    unexport = "unset";
-    rm = "rm -i";
-    cp = "cp -i";
-    mv = "mv -i";
-
-    cat = "bat -pp";
-    less = "bat --paging=always";
-
-    code = "codium";
-
-    k = "kubectl";
-    kx = "kubectx";
-    ku = "kubectx -u";
+    interactiveShellInit = ''
+      set -g fish_greeting ""
+    '';
   };
 }

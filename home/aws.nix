@@ -44,6 +44,14 @@ in {
     SAML2AWS_SAML_CACHE_FILE="/Users/${user.name}/.aws/saml2aws/cache_WB"
   '';
 
+  # home.file.".aws/env/WBD.env".text = ''
+  #   SAML2AWS_USERNAME="op://${vault}/WBD/username"
+  #   SAML2AWS_PASSWORD="op://${vault}/WBD/password"
+  #   SAML2AWS_MFA_TOKEN="op://${vault}/WBD/one-time password?attribute=otp"
+  #   SAML2AWS_URL="op://${vault}/AWS-WBD/url"
+  #   SAML2AWS_SAML_CACHE_FILE="/Users/${user.name}/.aws/saml2aws/cache_WBD"
+  # '';
+
   home.activation.genAWSConfig = lib.hm.dag.entryAfter ["linkGeneration"] ''
     # Path to AWS config file
     AWS_CONFIG_FILE="/Users/${user.name}/.aws/config"

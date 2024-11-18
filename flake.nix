@@ -1,13 +1,8 @@
 {
   description = "Nix for macOS configuration";
-  nixConfig = {
-    substituters = [
-      "https://cache.nixos.org"
-    ];
-  };
 
   inputs = {
-    # nixpkgs-darwin.url = "github:nixos/nixpkgs-unstable";
+    # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
     darwin = {
       url = "github:lnl7/nix-darwin";
@@ -66,6 +61,9 @@
       #   inherit inputs;
       # };
       modules = [
+        ./darwin/bootstrap.nix
+        ./darwin/general.nix
+
         ./modules/nix-core.nix
         ./modules/system.nix
         ./modules/apps.nix

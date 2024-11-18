@@ -10,8 +10,16 @@
       # nix
       bbenoist.nix # nix LSP
       kamadorueda.alejandra # nix linter
+      # rust
+      rust-lang.rust-analyzer
+      # cpp
+      # ms-vscode.cpptools
+      # js
+      dbaeumer.vscode-eslint
       # yaml
       redhat.vscode-yaml # yaml LSP
+      # terraform
+      hashicorp.terraform
       # misc
       skellock.just # justfile lint
     ];

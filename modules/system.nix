@@ -155,10 +155,15 @@
         # 12: Notification Center
         # 13: Lock Screen
         # 14: Quick Note
-        wvous-bl-corner = 5; # bottom-left  → Start screen saver
-        wvous-br-corner = 3; # bottom-right → Show application windows
-        wvous-tl-corner = 2; # top-left     → Mission Control
-        wvous-tr-corner = 4; # top-right    → Desktop
+        # wvous-bl-corner = 5; # bottom-left  → Start screen saver
+        # wvous-br-corner = 3; # bottom-right → Show application windows
+        # wvous-tl-corner = 2; # top-left     → Mission Control
+        # wvous-tr-corner = 4; # top-right    → Desktop
+        # Disable all
+        wvous-bl-corner = 1;
+        wvous-br-corner = 1;
+        wvous-tl-corner = 1;
+        wvous-tr-corner = 1;
       };
 
       # customize finder
@@ -217,7 +222,7 @@
       # customize trackpad
       trackpad = {
         ActuationStrength = 1; # disable silent clicking
-        Clicking = true; # enable tap to click
+        Clicking = false; # enable tap to click
         Dragging = false; # disable tap to drag
         FirstClickThreshold = 1; # set click threshold to medium
         SecondClickThreshold = 1; # set force click threshold to medium
@@ -266,28 +271,5 @@
 
   security.pam.enableSudoTouchIdAuth = true;
 
-  programs.zsh.enable = true;
-  environment.shells = [
-    pkgs.zsh
-  ];
-
   time.timeZone = "Europe/Warsaw";
-
-  fonts = {
-    packages = with pkgs; [
-      material-design-icons
-      font-awesome
-
-      (nerdfonts.override {
-        fonts = [
-          # symbols icon only
-          "NerdFontsSymbolsOnly"
-          # Characters
-          "FiraCode"
-          "JetBrainsMono"
-          "Iosevka"
-        ];
-      })
-    ];
-  };
 }
