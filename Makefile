@@ -33,3 +33,12 @@ clean:
 
 link:
 	ln -s "$(pwd)" ~/nix-config
+
+init-nix:
+	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+
+vm-clone:
+	utmctl clone "macOS (template)" --name macOS
+
+vm-start:
+	utmctl start macOS
