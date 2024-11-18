@@ -32,7 +32,7 @@ clean:
 	rm -rf result
 
 link:
-	ln -s "$(pwd)" ~/nix-config
+	ln "$(pwd)" ~/nix-config
 
 init-nix:
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
