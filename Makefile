@@ -1,4 +1,5 @@
 HOSTNAME := janpuc-mbp
+DIR := ${CURDIR}
 
 .PHONY: darwin darwin-debug update history gc fmt clean
 
@@ -32,10 +33,11 @@ clean:
 	rm -rf result
 
 link:
-	ln "$(pwd)" ~/nix-config
+	ln -s "$(DIR)" ~/nix-config
 
 init-nix:
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
 vm-clone:
 	utmctl clone "macOS (template)" --name macOS
