@@ -44,3 +44,6 @@ vm-clone:
 
 vm-start:
 	utmctl start macOS
+
+uninstall-bootstrap-nix:
+	sudo -i nix-env --uninstall nix

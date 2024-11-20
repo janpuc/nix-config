@@ -238,23 +238,8 @@
       # All custom entries can be found by running `defaults read` command.
       # or `defaults read xxx` to read a specific domain.
       CustomUserPreferences = {
-        "com.knollsoft.Rectangle" = {
-          SUEnableAutomaticChecks = 0;
-          SUHasLaunchedBefore = 1;
-          alternateDefaultShortcuts = 1;
-          hapticFeedbackOnSnap = 1;
-          hideMenubarIcon = 1;
-          landscapeSnapAreas = null;
-          launchOnLogin = 1;
-          portraitSnapAreas = null;
-          reflowTodo = {
-            keyCode = 45;
-            modifierFlags = 786432;
-          };
-          toggleTodo = {
-            keyCode = 11;
-            modifierFlags = 786432;
-          };
+        "com.apple.WindowManager" = {
+          EnableTiledWindowMargins = 0;
         };
       };
     };

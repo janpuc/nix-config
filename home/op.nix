@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    _1password
+    _1password-cli
   ];
   imports = [
     inputs._1password-shell-plugins.hmModules.default

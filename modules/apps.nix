@@ -9,14 +9,13 @@
     };
 
     casks = [
-      "1password"
-      "arc"
-      "orbstack"
+      # "1password"
+      # "orbstack"
       "obsidian"
       "whisky"
       "messenger"
-      "microsoft-teams"
-      "microsoft-auto-update"
+      # "microsoft-teams"
+      # "microsoft-auto-update"
       "steam"
     ];
   };

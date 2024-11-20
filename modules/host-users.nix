@@ -1,6 +1,7 @@
 {
   hostname,
   user,
+  pkgs,
   ...
 }: {
   networking.hostName = hostname;
@@ -14,6 +15,7 @@
   users.users."${user.name}" = {
     home = "/Users/${user.name}";
     description = user.name;
+    shell = pkgs.fish;
   };
 
   nix.settings.trusted-users = [user.name];

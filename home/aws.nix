@@ -64,7 +64,7 @@ in {
       AWK=${lib.getExe pkgs.gawk}
       RETRY=${lib.getExe pkgs.retry}
       SAML2AWS=${lib.getExe pkgs.saml2aws}
-      OP=${lib.getExe pkgs._1password}
+      OP=${lib.getExe pkgs._1password-cli}
 
       if [[ -n "$AWK" && -n "$RETRY" && -n "$SAML2AWS" && -n "$OP" ]]; then
         # Check if op is logged in
