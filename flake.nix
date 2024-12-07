@@ -1,15 +1,21 @@
 {
   description = "Nix for macOS configuration";
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.2405.*";
+    nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.2411.*";
     nixpkgs-unstable.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0";
 
     _1password-shell-plugins.url = "github:1Password/shell-plugins";
     _1password-shell-plugins.inputs.nixpkgs.follows = "nixpkgs";
 
+    brew-api.url = "github:BatteredBunny/brew-api";
+    brew-api.flake = false;
+
+    brew-nix.url = "github:BatteredBunny/brew-nix";
+    brew-nix.inputs.brew-api.follows = "brew-api";
+
     catppuccin.url = "github:catppuccin/nix";
 
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-darwin.url = "github:lnl7/nix-darwin";
@@ -62,6 +68,8 @@
     homeConfigurations = {
       "jan.pucilowski@hashirama" = helper.mkHome {
         hostname = "hashirama";
+        platform = "aarch64-darwin";
+        desktop = "aqua";
       };
     };
     # nix run nix-darwin -- switch --flake ~/nix-config

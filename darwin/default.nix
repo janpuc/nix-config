@@ -41,15 +41,6 @@
     };
   };
 
-  homebrew = {
-    enable = true;
-    onActivation = {
-      autoUpdate = true;
-      upgrade = true;
-      cleanup = "zap";
-    };
-  };
-
   nixpkgs = {
     # Configure your nixpkgs instance
     config.allowUnfree = true;
@@ -122,6 +113,10 @@
       verifyNixChannels = false;
     };
     defaults = {
+      ".GlobalPreferences" = {
+        "com.apple.mouse.scaling" = 0.6875; # set mouse tracking speed
+        "com.apple.sound.beep.sound" = "/System/Library/Sounds/Tink.aiff"; # set alert sound to "Boop"
+      };
       CustomUserPreferences = {
         "com.apple.AdLib" = {
           allowApplePersonalizedAdvertising = false;
@@ -168,8 +163,8 @@
         AppleMeasurementUnits = "Centimeters";
         AppleMetricUnits = 1;
         AppleTemperatureUnit = "Celsius";
-        InitialKeyRepeat = 15;
-        KeyRepeat = 2;
+        InitialKeyRepeat = 10;
+        KeyRepeat = 1;
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticDashSubstitutionEnabled = false;
         NSAutomaticPeriodSubstitutionEnabled = false;

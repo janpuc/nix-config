@@ -9,4 +9,9 @@
       config.allowUnfree = true;
     };
   };
+  brew-nix = final: _prev: {
+    brew = import inputs.brew-nix {
+      inherit (final) system;
+    };
+  };
 }
