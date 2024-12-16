@@ -56,6 +56,7 @@
     self,
     nix-darwin,
     nixpkgs,
+    brew-nix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -84,67 +85,4 @@
     # Formatter for .nix files, accessible via 'nix fmt'
     formatter = helper.forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
   };
-
-  # outputs = inputs @ {
-  #   self,
-  #   nixpkgs,
-  #   darwin,
-  #   nix-homebrew,
-  #   homebrew-bundle,
-  #   homebrew-core,
-  #   homebrew-cask,
-  #   home-manager,
-  #   ...
-  # }: let
-  #   user = {
-  #     name = "jan.pucilowski";
-  #     github = "janpuc";
-  #     email = "janpuc@proton.me";
-  #   };
-  #   system = "aarch64-darwin";
-  #   hostname = "janpuc-mbp";
-  #   specialArgs = {
-  #     inherit inputs user hostname;
-  #   };
-  # in {
-  #   darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
-  #     inherit system specialArgs;
-  #     # extraSpecialArgs = {
-  #     #   inherit inputs;
-  #     # };
-  #     modules = [
-  #       ./darwin/bootstrap.nix
-  #       ./darwin/general.nix
-
-  #       ./modules/nix-core.nix
-  #       ./modules/system.nix
-  #       ./modules/apps.nix
-  #       ./modules/dock.nix
-  #       ./modules/host-users.nix
-
-  #       home-manager.darwinModules.home-manager
-  #       {
-  #         home-manager.useGlobalPkgs = true;
-  #         home-manager.useUserPackages = true;
-  #         home-manager.extraSpecialArgs = specialArgs;
-  #         home-manager.users.${user.name} = import ./home;
-  #       }
-  #       nix-homebrew.darwinModules.nix-homebrew
-  #       {
-  #         nix-homebrew = {
-  #           user = user.name;
-  #           enable = true;
-  #           taps = {
-  #             "homebrew/homebrew-core" = homebrew-core;
-  #             "homebrew/homebrew-cask" = homebrew-cask;
-  #             "homebrew/homebrew-bundle" = homebrew-bundle;
-  #           };
-  #           mutableTaps = false;
-  #           autoMigrate = true;
-  #         };
-  #       }
-  #     ];
-  #   };
-  #   formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
-  # };
 }

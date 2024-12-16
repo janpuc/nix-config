@@ -52,6 +52,8 @@
       #outputs.overlays.modifications
       outputs.overlays.unstable-packages
       # Add overlays exported from other flakes:
+      # outputs.overlays.brew-nix
+      inputs.brew-nix.overlays.default
     ];
   };
 
@@ -183,13 +185,13 @@
           "/System/Applications/System Settings.app"
           "/System/Applications/Music.app"
           "/Users/${username}/Applications/Home Manager Apps/Arc.app"
-          "/Applications/Messenger.app" # TODO: switch to nixpkgs
+          "/Users/${username}/Applications/Home Manager Apps/Messenger.app" # using nix-brew
           # "${pkgs.teams}/Applications/Teams.app" # TODO: switch to nixpkgs
           # "${pkgs.slack}/Applications/Slack.app"
-          # "${pkgs.vscodium}/Applications/VSCodium.app"
+          "/Users/${username}/Applications/Home Manager Apps/VSCodium.app"
           "/Users/${username}/Applications/Home Manager Apps/Zed.app"
           # "${pkgs.wezterm}/Applications/WezTerm.app"
-          "/Applications/1Password.app" # TODO: move to /Applications
+          "/Applications/1Password.app"
           # "${pkgs.utm}/Applications/UTM.app"
         ];
         persistent-others = ["/Users/${username}/Downloads"];

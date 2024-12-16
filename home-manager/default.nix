@@ -17,6 +17,7 @@ in {
       # outputs.homeManagerModules.examle
 
       # Modules exported from other flakes:
+      inputs._1password-shell-plugins.hmModules.default
       inputs.catppuccin.homeManagerModules.catppuccin
       inputs.nix-index-database.hmModules.nix-index
     ]
@@ -41,6 +42,7 @@ in {
     # https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/
     packages = with pkgs;
       [
+        _1password-cli
         #asciicam # Terminal webcam #TODO: Move to linux only
         #asciinema-agg # Convert aciinema to .gif
         #asciinema # Terminal recorder
@@ -142,6 +144,7 @@ in {
       MANROFFOPT = "-c";
       MICRO_TRUECOLOR = "1";
       PAGER = "bat";
+      SSH_AUTH_SOCK = "~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock";
       SYSTEMD_EDITOR = "micro";
       VISUAL = "micro";
     };
@@ -155,6 +158,9 @@ in {
   nixpkgs = {
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
+      # outputs.overlays.brew-nix
+      inputs.brew-nix.overlays.default
+
       #outputs.overlays.additions
       #outputs.overlays.modifications
       outputs.overlays.unstable-packages
@@ -177,6 +183,12 @@ in {
   };
 
   programs = {
+    _1password-shell-plugins = {
+      enable = true;
+      plugins = with pkgs; [
+        gh
+      ];
+    };
     aria2.enable = true;
     bat = {
       catppuccin.enable = true;
@@ -244,11 +256,18 @@ in {
     fish = {
       catppuccin.enable = true;
       enable = true;
+      interactiveShellInit = ''
+        set -g fish_greeting ""
+      '';
+      shellAbbrs = {
+        g = "git";
+      };
       shellAliases = {
         banner = lib.mkIf isLinux "${pkgs.figlet}/bin/figlet";
         banner-color = lib.mkIf isLinux "${pkgs.figlet}/bin/figlet $argv | ${pkgs.dotacat}/bin/dotacat";
         brg = "${pkgs.bat-extras.batgrep}/bin/batgrep";
         cat = "${pkgs.bat}/bin/bat --paging=never";
+        code = "codium";
         #clock = ''${pkgs.tty-clock}/bin/tty-clock -B -c -C 4 -f "%a, %d %b"'';
         dadjoke = ''${pkgs.curlMinimal}/bin/curl --header "Accept: text/plain https://icanhazdadjoke.com/"'';
         dmesg = "${pkgs.util-linux}/bin/dmesg --human --color=always";
@@ -263,6 +282,7 @@ in {
         moon = "${pkgs.curlMinimal}/bin/curl -s wttr.in/Moon";
         more = "${pkgs.bat}/bin/bat";
         parrot = "${pkgs.terminal-parrot}/bin/terminal-parrot -delay 50 -loops 7";
+        reload = "exec $SHELL -l";
         ruler = ''${pkgs.hr}/bin/hr "╭─³⁴⁵⁶⁷⁸─╮"'';
         screenfetch = "${pkgs.fastfetch}/bin/fastfetch";
         speedtest = "${pkgs.speedtest-go}/bin/speedtest-go";
@@ -324,6 +344,12 @@ in {
         core = {
           pager = "bat";
         };
+        gpg = {
+          format = "ssh";
+          # ssh = {
+          #   program = 
+          # };
+        };
         push = {
           default = "matching";
         };
@@ -368,6 +394,10 @@ in {
       };
     };
     nix-index.enable = true;
+#   oh-my-posh = {
+#     enable = true;
+#     useTheme = "cloud-context";
+#   };
     powerline-go = {
       enable = true;
       settings = {
@@ -384,6 +414,13 @@ in {
         "--smart-case"
       ];
       enable = true;
+    };
+    ssh = {
+      enable =  true;
+      includes = [ "~/.orbstack/ssh/config" ];
+      extraConfig = ''
+        IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+      '';
     };
     tmate.enable = true;
     yazi = {

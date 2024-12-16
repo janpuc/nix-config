@@ -1,8 +1,10 @@
 {...}:
 {
   imports = [
+    ./1password
     ./arc-browser
-    ./messanger
+    ./messenger
+    ./vscode
     ./zed-editor
   ];
 }
