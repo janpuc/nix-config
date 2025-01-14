@@ -1,17 +1,16 @@
-HOSTNAME := janpuc-mbp
+HOSTNAME := hashirama
 DIR := ${CURDIR}
 
 .PHONY: darwin darwin-debug update history gc fmt clean
 
 darwin:
-	nix build .#darwinConfigurations.$(HOSTNAME).system \
-	  --extra-experimental-features 'nix-command flakes'
-	./result/sw/bin/darwin-rebuild switch --flake .#$(HOSTNAME)
+	nix run nix-darwin -- switch --flake .#$(HOSTNAME)
 
-darwin-debug:
-	nix build .#darwinConfigurations.$(HOSTNAME).system --show-trace --verbose \
-	  --extra-experimental-features 'nix-command flakes'
-	./result/sw/bin/darwin-rebuild switch --flake .#$(HOSTNAME) --show-trace --verbose
+home-manager:
+	nix run nixpkgs#home-manager -- switch --flake .
+
+home-manager-debug:
+	nix run nixpkgs#home-manager -- switch --flake . -L --show-trace
 
 update:
 	nix flake update

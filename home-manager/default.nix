@@ -26,6 +26,14 @@ in {
   catppuccin = {
     accent = "blue";
     flavor = "mocha";
+    bat.enable = true;
+    bottom.enable = true;
+    cava.enable = true;
+    fish.enable = true;
+    fzf.enable = true;
+    gitui.enable = true;
+    micro.enable = true;
+    yazi.enable = true;
   };
 
   home = {
@@ -191,7 +199,6 @@ in {
     };
     aria2.enable = true;
     bat = {
-      catppuccin.enable = true;
       enable = true;
       extraPackages = with pkgs.bat-extras; [
         batgrep
@@ -203,7 +210,6 @@ in {
       };
     };
     bottom = {
-      catppuccin.enable = true;
       enable = true;
       settings = {
         disk_filter = {
@@ -224,7 +230,6 @@ in {
       };
     };
     cava = {
-      catppuccin.enable = true;
       enable = isLinux;
     };
     dircolors = {
@@ -254,7 +259,6 @@ in {
       icons = "auto";
     };
     fish = {
-      catppuccin.enable = true;
       enable = true;
       interactiveShellInit = ''
         set -g fish_greeting ""
@@ -296,7 +300,6 @@ in {
       };
     };
     fzf = {
-      catppuccin.enable = true;
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
@@ -370,7 +373,6 @@ in {
       ];
     };
     gitui = {
-      catppuccin.enable = true;
       enable = true;
     };
     gpg.enable = true;
@@ -378,7 +380,6 @@ in {
     info.enable = true;
     jq.enable = true;
     micro = {
-      catppuccin.enable = true;
       enable = true;
       settings = {
         autosu = true;
@@ -428,7 +429,6 @@ in {
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableZshIntegration = true;
-      catppuccin.enable = true;
       settings = {
         manager = {
           show_hidden = false;
