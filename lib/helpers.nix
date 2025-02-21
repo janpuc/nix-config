@@ -3,21 +3,18 @@
   outputs,
   stateVersion,
   ...
-}:
-{
+}: {
   # Helper function for generating home-manager configs
-  mkHome =
-    {
-      hostname,
-      username ? "jan.pucilowski",
-      desktop ? null,
-      platform ? "aarch64-darwin",
-    }:
-    let
-      isInstall = true;
-      isLaptop = true;
-      isWorkstation = builtins.isString desktop;
-    in
+  mkHome = {
+    hostname,
+    username ? "jan.pucilowski",
+    desktop ? null,
+    platform ? "aarch64-darwin",
+  }: let
+    isInstall = true;
+    isLaptop = true;
+    isWorkstation = builtins.isString desktop;
+  in
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = inputs.nixpkgs.legacyPackages.${platform};
       extraSpecialArgs = {
@@ -34,21 +31,19 @@
           isWorkstation
           ;
       };
-      modules = [ ../home-manager ];
+      modules = [../home-manager];
     };
 
-  mkDarwin =
-    {
-      desktop ? "aqua",
-      hostname,
-      username ? "jan.pucilowski",
-      platform ? "aarch64-darwin",
-    }:
-    let
-      isInstall = true;
-      isLaptop = true;
-      isWorkstation = true;
-    in
+  mkDarwin = {
+    desktop ? "aqua",
+    hostname,
+    username ? "jan.pucilowski",
+    platform ? "aarch64-darwin",
+  }: let
+    isInstall = true;
+    isLaptop = true;
+    isWorkstation = true;
+  in
     inputs.nix-darwin.lib.darwinSystem {
       specialArgs = {
         inherit
@@ -64,7 +59,7 @@
           isWorkstation
           ;
       };
-      modules = [ ../darwin ];
+      modules = [../darwin];
     };
 
   forAllSystems = inputs.nixpkgs.lib.genAttrs [

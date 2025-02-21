@@ -11,7 +11,7 @@
 }: {
   imports = [
     inputs.nix-index-database.darwinModules.nix-index
-    ./${hostname}
+    # ./${hostname}
   ];
 
   system.stateVersion = 4;
@@ -35,9 +35,9 @@
     ];
 
     variables = {
-      EDITOR = "micro";
-      SYSTEMD_EDITOR = "micro";
-      VISUAL = "micro";
+      EDITOR = "nano";
+      SYSTEMD_EDITOR = "nano";
+      VISUAL = "nano";
     };
   };
 
@@ -74,9 +74,9 @@
   programs = {
     fish = {
       enable = true;
-      shellAliases = {
-        nano = "micro";
-      };
+      # shellAliases = {
+      #   nano = "micro";
+      # };
     };
     gnupg.agent = {
       enable = true;
@@ -157,6 +157,11 @@
         "com.apple.TimeMachine".DoNotOfferNewDisksForBackup = true;
         # Turn on app auto-update
         "com.apple.commerce".autoUpdate = true;
+        "company.thebrowser.Browser" = {
+          arcMaxAutoOptInEnabled = 0;
+          currentAppIconName = "candy";
+          hasLaunchedBefore = 1;
+        };
       };
       NSGlobalDomain = {
         AppleICUForce24HourTime = true;
@@ -175,6 +180,9 @@
         NSNavPanelExpandedStateForSaveMode = true;
         NSNavPanelExpandedStateForSaveMode2 = true;
       };
+      LaunchServices = {
+        LSQuarantine = false;
+      };
       SoftwareUpdate = {
         AutomaticallyInstallMacOSUpdates = false;
       };
@@ -185,14 +193,13 @@
           "/System/Applications/System Settings.app"
           "/System/Applications/Music.app"
           "/Users/${username}/Applications/Home Manager Apps/Arc.app"
-          "/Users/${username}/Applications/Home Manager Apps/Messenger.app" # using nix-brew
-          # "${pkgs.teams}/Applications/Teams.app" # TODO: switch to nixpkgs
-          # "${pkgs.slack}/Applications/Slack.app"
-          "/Users/${username}/Applications/Home Manager Apps/VSCodium.app"
-          "/Users/${username}/Applications/Home Manager Apps/Zed.app"
-          # "${pkgs.wezterm}/Applications/WezTerm.app"
+          "/Users/${username}/Applications/Home Manager Apps/Beeper Desktop.app"
+          "/Users/${username}/Applications/Home Manager Apps/Microsoft Teams.app"
+          "/Users/${username}/Applications/Home Manager Apps/Slack.app"
+          "/Users/${username}/Applications/Home Manager Apps/Visual Studio Code.app"
+          "/Users/${username}/Applications/Home Manager Apps/Ghostty.app"
           "/Applications/1Password.app"
-          # "${pkgs.utm}/Applications/UTM.app"
+          "/Users/${username}/Applications/Home Manager Apps/UTM.app"
         ];
         persistent-others = ["/Users/${username}/Downloads"];
         show-recents = false;

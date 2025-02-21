@@ -1,5 +1,9 @@
 # Custom packages, that can be defined similarly to ones from nixpkgs
 # You can build them using 'nix build .#example'
 pkgs: {
-  #zoom-us = pkgs.callPackage ./zoom-us {};
+  bambu-studio = pkgs.callPackage ./bambu-studio {};
+  beeper = pkgs.callPackage ./beeper {};
+  ghostty = pkgs.callPackage ./ghostty {};
+  microsoft-teams = pkgs.callPackage ./microsoft-teams {};
+  orbstack = pkgs.callPackage ./orbstack {};
 }

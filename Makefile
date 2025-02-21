@@ -1,15 +1,21 @@
 HOSTNAME := hashirama
 DIR := ${CURDIR}
 
-.PHONY: darwin darwin-debug update history gc fmt clean
+.PHONY: darwin-init darwin home-init home home-debug update history gc fmt clean
 
-darwin:
+darwin-init:
 	nix run nix-darwin -- switch --flake .#$(HOSTNAME)
 
-home-manager:
+darwin:
+	nh darwin switch .#darwinConfigurations.$(HOSTNAME)
+
+home-init:
 	nix run nixpkgs#home-manager -- switch --flake .
 
-home-manager-debug:
+home:
+	nh home switch .
+
+home-debug:
 	nix run nixpkgs#home-manager -- switch --flake . -L --show-trace
 
 update:
