@@ -2,6 +2,7 @@
   imports = [
     ./1password-shell-plugins
     ./aria2
+    ./awscli
     ./bat
     ./dircolors
     ./direnv

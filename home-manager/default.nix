@@ -27,12 +27,8 @@ in {
     accent = "blue";
     flavor = "mocha";
     bat.enable = true;
-    bottom.enable = true;
-    cava.enable = true;
     fish.enable = true;
     fzf.enable = true;
-    gitui.enable = true;
-    micro.enable = true;
     yazi.enable = true;
   };
 
@@ -54,7 +50,9 @@ in {
       [
         _1password-cli
         alejandra
+        saml2aws
         pbzx
+        aws-sso-cli
         #asciicam # Terminal webcam #TODO: Move to linux only
         #asciinema-agg # Convert aciinema to .gif
         #asciinema # Terminal recorder
@@ -153,7 +151,9 @@ in {
       ];
     sessionVariables = {
       EDITOR = "nano";
-      MANPAGER = "sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'";
+      MANPAGER = ''
+        sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'
+      '';
       PAGER = "bat";
       SSH_AUTH_SOCK = "~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock";
       SYSTEMD_EDITOR = "nano";

@@ -13,6 +13,9 @@
         less = "${pkgs.bat}/bin/bat";
         reload = "exec $SHELL -l";
         tree = "${pkgs.eza}/bin/eza --tree";
+        awsu = "set -e AWS_PROFILE";
+        unset = "set -e";
+        unexport = "set -e";
 
         # banner = lib.mkIf isLinux "${pkgs.figlet}/bin/figlet";
         # banner-color = lib.mkIf isLinux "${pkgs.figlet}/bin/figlet $argv | ${pkgs.dotacat}/bin/dotacat";

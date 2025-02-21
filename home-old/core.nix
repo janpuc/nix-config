@@ -45,28 +45,4 @@
 #     utm
 #     zoom-us
 #   ];
-
-#   home.activation.copy1Password = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
-#     appsDir="/Applications/Nix Apps"
-#     if [ -d "$appsDir" ]; then
-#       rm -rf "$appsDir/1Password.app"
-#     fi
-
-#     app="/Applications/1Password.app"
-#     if [ -L "$app" ] || [ -f "$app" ]; then
-#       rm "$app"
-#     fi
-
-#     rsyncFlags=(
-#       --archive
-#       --checksum
-#       --chmod=-w
-#       --copy-unsafe-links
-#       --delete
-#       --no-group
-#       --no-owner
-#     )
-#     ${lib.getBin pkgs.rsync}/bin/rsync "''${rsyncFlags[@]}" \
-#       ${pkgs._1password-gui}/Applications/1Password.app/ /Applications/1Password.app
-#   '';
 # }
