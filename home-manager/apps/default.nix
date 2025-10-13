@@ -7,7 +7,7 @@
     ./ghostty
     ./microsoft-teams
     ./obsidian
-    # ./orbstack
+    ./orbstack
     ./raycast
     ./slack
     # ./steam # INFO: Disabled
