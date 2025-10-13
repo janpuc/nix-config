@@ -2,7 +2,7 @@
   imports = [
     ## TODO: Add a better way to disable programs
     ./bambu-studio
-    # ./beeper
+    ./beeper
     # ./factorio # TODO: Not yet added
     ./ghostty
     # ./microsoft-teams

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home = {
     packages = with pkgs; [
-      beeper
+      brewCasks.beeper
     ];
   };
 }
