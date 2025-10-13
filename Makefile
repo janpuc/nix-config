@@ -4,6 +4,8 @@ DIR := ${CURDIR}
 .PHONY: darwin-init darwin home-init home home-debug update history gc fmt clean
 
 darwin-init:
+	test -f /etc/zshrc && sudo mv /etc/zshrc /etc/zshrc.before-nix-darwin
+	test -f /etc/zprofile && sudo mv /etc/zprofile /etc/zprofile.before-nix-darwin
 	sudo "$$(nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .#$(HOSTNAME) 2>&1 > /dev/null | cut -d ":" -f1)" switch --flake .#$(HOSTNAME)
 
 darwin:

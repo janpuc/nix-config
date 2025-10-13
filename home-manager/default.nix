@@ -18,7 +18,7 @@ in {
     # Modules exported from other flakes:
     inputs._1password-shell-plugins.hmModules.default
     inputs.catppuccin.homeModules.catppuccin
-    inputs.nix-index-database.hmModules.nix-index
+    inputs.nix-index-database.homeModules.nix-index
     ./apps
     ./config
     ./programs

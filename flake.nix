@@ -13,7 +13,7 @@
     brew-nix.url = "github:BatteredBunny/brew-nix";
     brew-nix.inputs.brew-api.follows = "brew-api";
 
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix/release-25.05";
 
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";

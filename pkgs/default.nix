@@ -3,7 +3,7 @@
 pkgs: {
   bambu-studio = pkgs.callPackage ./bambu-studio {};
   beeper = pkgs.callPackage ./beeper {};
-  ghostty = pkgs.callPackage ./ghostty {};
+  # ghostty = pkgs.callPackage ./ghostty {};
   microsoft-teams = pkgs.callPackage ./microsoft-teams {};
   orbstack = pkgs.callPackage ./orbstack {};
   # proton-drive = pkgs.callPackage ./proton-drive {};
