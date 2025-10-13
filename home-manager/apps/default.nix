@@ -1,13 +1,13 @@
 {...}: {
   imports = [
     ## TODO: Add a better way to disable programs
-    ./bambu-studio
-    ./beeper
+    # ./bambu-studio
+    # ./beeper
     # ./factorio # TODO: Not yet added
     ./ghostty
-    ./microsoft-teams
+    # ./microsoft-teams
     ./obsidian
-    ./orbstack
+    # ./orbstack
     # ./raycast # INFO: Disabled
     ./slack
     # ./steam # INFO: Disabled
