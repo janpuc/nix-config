@@ -22,7 +22,7 @@ TODO:
   - [x] Slack
   - [x] Spotify
   - [x] Steam
-  - [ ] Tailscale
+  - [x] Tailscale
   - [x] UTM
   - [x] VSCode
   - [x] Zoom US

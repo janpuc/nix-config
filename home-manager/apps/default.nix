@@ -13,6 +13,7 @@
     ./slack
     # ./spotify
     ./steam
+    # ./tailscale
     ./utm
     ./vscode
     ./zoom-us
