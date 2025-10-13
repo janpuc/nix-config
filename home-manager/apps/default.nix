@@ -14,7 +14,6 @@
     # ./steam # INFO: Disabled
     ./utm
     ./vscode
-    # ./zen-browser
     ./zoom-us
   ];
 }

@@ -6,5 +6,4 @@ pkgs: {
   microsoft-teams = pkgs.callPackage ./microsoft-teams {};
   orbstack = pkgs.callPackage ./orbstack {};
   # proton-drive = pkgs.callPackage ./proton-drive {};
-  zen-browser = pkgs.callPackage ./zen-browser {};
 }
