@@ -8,7 +8,6 @@
     ./microsoft-teams
     ./obsidian
     ./orbstack
-    # ./proton-drive
     # ./raycast # INFO: Disabled
     ./slack
     # ./steam # INFO: Disabled

@@ -5,5 +5,4 @@ pkgs: {
   beeper = pkgs.callPackage ./beeper {};
   microsoft-teams = pkgs.callPackage ./microsoft-teams {};
   orbstack = pkgs.callPackage ./orbstack {};
-  # proton-drive = pkgs.callPackage ./proton-drive {};
 }

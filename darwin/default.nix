@@ -11,7 +11,6 @@
 }: {
   imports = [
     inputs.nix-index-database.darwinModules.nix-index
-    ./programs/proton-drive
   ];
 
   system.stateVersion = 5;
@@ -88,10 +87,6 @@
     };
     info.enable = false;
     nix-index-database.comma.enable = true;
-    proton-drive = {
-      enable = true;
-      package = pkgs.brewCasks.proton-drive;
-    };
   };
 
   # Enable TouchID for sudo authentication
