@@ -93,23 +93,12 @@
   security.pam.services.sudo_local.touchIdAuth = true;
 
   system = {
-    # # activationScripts run every time you boot the system or execute `darwin-rebuild`
-    # activationScripts = {
-    #   diff = {
-    #     supportsDryActivation = true;
-    #     text = ''
-    #       ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff /run/current-system "$systemConfig"
-    #     '';
-    #   };
-    #   # reload the settings and apply them without the need to logout/login ## Removed in 25.05
-    #   # postUserActivation.text = ''
-    #   #   /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-    #   # '';
-    #   # https://github.com/LnL7/nix-darwin/issues/881
-    #   # setFishAsShell.text = ''
-    #   #   dscl . -create /Users/${username} UserShell /run/current-system/sw/bin/fish
-    #   # '';
-    # };
+    # activationScripts run every time you boot the system or execute `darwin-rebuild`
+    activationScripts = {
+      extraActivation.text = ''
+        softwareupdate --install-rosetta --agree-to-license
+      '';
+    };
     defaults = {
       ".GlobalPreferences" = {
         ## Sets the mouse tracking speed. Found in the “Mouse” section of “System Preferences”. Set to -1.0 to disable mouse
