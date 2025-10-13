@@ -6,24 +6,24 @@ TODO:
 - [ ] VSCode settings
 - [ ] Shell settings
 - [ ] Secrets (1pass)
-- [ ] Dir backups (Development etc.)
+- [ ] Dir backups (Development etc.) - using kopia and KopiaUI
+- [ ] Defaults
 - [ ] Apps:
   - [x] 1Password
-  - [x] Arc
   - [ ] Bambu Studio
   - [x] Beeper
   - [ ] Factorio
   - [x] Ghostty
-  - [ ] Immersed
   - [x] Microsoft Teams
   - [x] Obsidian
   - [x] OrbStack
   - [x] Raycast
+  - [ ] Safari addons (Kagi, wBlock)
   - [x] Slack
+  - [ ] Spotify
   - [ ] Steam
   - [ ] Tailscale
   - [x] UTM
-  - [ ] Whisky
   - [x] Zoom US
 
 Hostnames:
