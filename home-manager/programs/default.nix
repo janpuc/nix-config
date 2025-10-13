@@ -2,7 +2,9 @@
   imports = [
     ./1password-shell-plugins
     ./aria2
+    # ./atuin
     ./awscli
+    ./bash
     ./bat
     ./dircolors
     ./direnv
@@ -15,11 +17,12 @@
     ./home-manager
     ./jq
     ./nix-index
-    ./powerline-go
     ./ripgrep
     ./ssh
+    ./starship
     ./yazi
     ./yt-dlp
     ./zoxide
+    ./zsh
   ];
 }

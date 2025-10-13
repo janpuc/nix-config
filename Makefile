@@ -52,3 +52,6 @@ vm-start:
 
 uninstall-bootstrap-nix:
 	sudo -i nix-env --uninstall nix
+
+set-fish:
+	chsh -s /run/current-system/sw/bin/fish

@@ -6,10 +6,11 @@
 }:
 stdenv.mkDerivation rec {
   pname = "beeper";
-  version = "4.0.445";
+  version = "4.0.821";
   src = fetchurl {
-    url = "https://api.beeper.com/desktop/download/macos/arm64/stable/com.automattic.beeper.desktop";
-    sha256 = "0s2v1srv6lkwxfzgvym4pl3vb5b0afmrz9b6925xlkjd502l993h";
+    # url = "https://api.beeper.com/desktop/download/macos/arm64/stable/com.automattic.beeper.desktop";
+    url = "https://beeper-desktop.download.beeper.com/builds/Beeper-${version}-arm64-mac.zip";
+    sha256 = "OeQVQ7QnTni3HPcIaDPH6JJaIaTeS8S85HCnXo9i2fk=";
   };
 
   nativeBuildInputs = [unzip];

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  username,
+  pkgs,
+  ...
+}: {
   programs = {
     fish = {
       enable = true;
@@ -9,13 +13,16 @@
         g = "git";
       };
       shellAliases = {
-        cat = "${pkgs.bat}/bin/bat --paging=never";
-        less = "${pkgs.bat}/bin/bat";
-        reload = "exec $SHELL -l";
-        tree = "${pkgs.eza}/bin/eza --tree";
-        awsu = "set -e AWS_PROFILE";
-        unset = "set -e";
-        unexport = "set -e";
+        # cat = "${pkgs.bat}/bin/bat --paging=never";
+        # less = "${pkgs.bat}/bin/bat";
+        # reload = "exec $SHELL -l";
+        # tree = "${pkgs.eza}/bin/eza --tree";
+        # awsx = ''set -Ux AWS_PROFILE $(sed -n 's/\[profile \(.*\)\]/\1/gp' ~/.aws/config | ${pkgs.fzf}/bin/fzf)'';
+        # awsu = "set -e AWS_PROFILE";
+        # unset = "set -e";
+        # unexport = "set -e";
+
+        # oci = ''op run --no-masking --env-file="/Users/${username}/.config/oci/op.env" -- oci'';
 
         # banner = lib.mkIf isLinux "${pkgs.figlet}/bin/figlet";
         # banner-color = lib.mkIf isLinux "${pkgs.figlet}/bin/figlet $argv | ${pkgs.dotacat}/bin/dotacat";

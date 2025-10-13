@@ -8,11 +8,11 @@
 }:
 stdenv.mkDerivation rec {
   pname = "microsoft-teams";
-  version = "25016.1904.3401.2239";
+  version = "25163.3001.3726.6503";
 
   src = fetchurl {
     url = "https://statics.teams.cdn.office.net/production-osx/${version}/MicrosoftTeams.pkg";
-    sha256 = "63a283bf5a022a221478df5630fb3e2b160bc20f3a7c13f09f350241cbf2b16e";
+    sha256 = "fHtV6Ibn+5Tc4a5ENk3rcB61pvWNssTIJ3VKP9PypTg=";
   };
 
   nativeBuidldInputs = [

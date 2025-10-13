@@ -17,10 +17,12 @@ in {
 
     # Modules exported from other flakes:
     inputs._1password-shell-plugins.hmModules.default
-    inputs.catppuccin.homeManagerModules.catppuccin
+    inputs.catppuccin.homeModules.catppuccin
     inputs.nix-index-database.hmModules.nix-index
     ./apps
+    ./config
     ./programs
+    ./scripts
   ];
 
   catppuccin = {
@@ -29,6 +31,7 @@ in {
     bat.enable = true;
     fish.enable = true;
     fzf.enable = true;
+    starship.enable = true;
     yazi.enable = true;
   };
 
@@ -48,11 +51,21 @@ in {
     # https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/
     packages = with pkgs;
       [
-        _1password-cli
+        oci-cli
+        # terraform
+        opentofu
+        kubectl
+        k9s
+        packer
+        talosctl
+        just
+
         alejandra
         saml2aws
         pbzx
         aws-sso-cli
+        yq-go
+        # sketchybar
         #asciicam # Terminal webcam #TODO: Move to linux only
         #asciinema-agg # Convert aciinema to .gif
         #asciinema # Terminal recorder
@@ -145,8 +158,7 @@ in {
       ]
       ++ lib.optionals isDarwin [
         # m-cli # Terminal Swiss Army Knife for macOS
-        # nh # TODO: revert once 4.0.0 is out (it has support for nix-darwin)
-        inputs.nh.packages.${pkgs.system}.nh
+        nh
         # coreutils
       ];
     sessionVariables = {
@@ -158,6 +170,20 @@ in {
       SSH_AUTH_SOCK = "~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock";
       SYSTEMD_EDITOR = "nano";
       VISUAL = "nano";
+
+      OCI_CLI_RC_FILE = "~/.config/oci/config";
+    };
+    shellAliases = {
+      cat = "${pkgs.bat}/bin/bat --paging=never";
+      less = "${pkgs.bat}/bin/bat";
+      reload = "exec $SHELL -l";
+      tree = "${pkgs.eza}/bin/eza --tree";
+      awsx = ''set -Ux AWS_PROFILE $(sed -n 's/\[profile \(.*\)\]/\1/gp' ~/.aws/config | ${pkgs.fzf}/bin/fzf)'';
+      awsu = "set -e AWS_PROFILE";
+      unset = "set -e";
+      unexport = "set -e";
+
+      oci = ''op run --no-masking --env-file="/Users/${username}/.config/oci/op.env" -- oci'';
     };
   };
 

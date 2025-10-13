@@ -4,15 +4,16 @@
   _7zz,
   lib,
 }: let
-  version = "01.10.02.72";
-  sha256 = "151jz2yn7sbanb40kazji6jx3npvjf8b3lmx0ai9czj2a2ayhl4h";
+  version = "02.01.01.52";
+  buildNumber = "20250616155614";
+  sha256 = "c60c57fb743de63ce3b8bd7ab2a78642d9ae61dc319db6e442c077093711e4b4";
 in
   stdenv.mkDerivation {
     pname = "BambuStudio";
     inherit version;
 
     src = fetchurl {
-      url = "https://github.com/bambulab/BambuStudio/releases/download/v${version}/Bambu_Studio_mac-v${version}-20250217113614.dmg";
+      url = "https://github.com/bambulab/BambuStudio/releases/download/v${version}/Bambu_Studio_mac-v${version}-${buildNumber}.dmg";
       inherit sha256;
     };
 
@@ -30,7 +31,7 @@ in
     '';
 
     meta = with lib; {
-      description = "BambuStudio Beta Release for macOS on ARM64";
+      description = "BambuStudio Public Release for macOS on ARM64";
       homepage = "https://github.com/bambulab/BambuStudio";
       license = licenses.unfree;
       platforms = ["aarch64-darwin"];

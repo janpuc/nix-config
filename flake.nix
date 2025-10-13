@@ -1,7 +1,7 @@
 {
   description = "Nix for macOS configuration";
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.2411.*";
+    nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.2505.*";
     nixpkgs-unstable.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0";
 
     _1password-shell-plugins.url = "github:1Password/shell-plugins";
@@ -15,13 +15,13 @@
 
     catppuccin.url = "github:catppuccin/nix";
 
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nh.url = "github:viperML/nh";
     nh.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-24.11";
+    nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-index-database.url = "github:Mic92/nix-index-database";
@@ -37,23 +37,6 @@
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0";
 
     fh.url = "https://flakehub.com/f/DeterminateSystems/fh/0";
-
-    # TODO: to replace with https://github.com/BatteredBunny/brew-nix
-    # nix-homebrew = {
-    #   url = "github:zhaofengli-wip/nix-homebrew";
-    # };
-    # homebrew-bundle = {
-    #   url = "github:homebrew/homebrew-bundle";
-    #   flake = false;
-    # };
-    # homebrew-core = {
-    #   url = "github:homebrew/homebrew-core";
-    #   flake = false;
-    # };
-    # homebrew-cask = {
-    #   url = "github:homebrew/homebrew-cask";
-    #   flake = false;
-    # };
   };
   outputs = {
     self,
@@ -64,7 +47,7 @@
   } @ inputs: let
     inherit (self) outputs;
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-    stateVersion = "24.05";
+    stateVersion = "25.05";
     helper = import ./lib {inherit inputs outputs stateVersion;};
   in {
     # home-manager switch -b backup --flake $HOME/nix-config

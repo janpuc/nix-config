@@ -11,10 +11,10 @@
 }: {
   imports = [
     inputs.nix-index-database.darwinModules.nix-index
-    # ./${hostname}
+    ./programs/proton-drive
   ];
 
-  system.stateVersion = 4;
+  system.stateVersion = 5;
 
   # Only install the docs I use
   documentation.enable = true;
@@ -48,7 +48,7 @@
     # You can add overlays here
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
-      #outputs.overlays.additions
+      outputs.overlays.additions
       #outputs.overlays.modifications
       outputs.overlays.unstable-packages
       # Add overlays exported from other flakes:
@@ -72,6 +72,8 @@
   networking.computerName = hostname;
 
   programs = {
+    _1password.enable = true;
+    _1password-gui.enable = true;
     fish = {
       enable = true;
       # shellAliases = {
@@ -84,41 +86,127 @@
     };
     info.enable = false;
     nix-index-database.comma.enable = true;
+    proton-drive = {
+      enable = true;
+      package = pkgs.brewCasks.proton-drive;
+    };
   };
 
   # Enable TouchID for sudo authentication
-  security.pam.enableSudoTouchIdAuth = true;
-
-  services = {
-    nix-daemon.enable = true;
-  };
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   system = {
-    # activationScripts run every time you boot the system or execute `darwin-rebuild`
-    activationScripts = {
-      diff = {
-        supportsDryActivation = true;
-        text = ''
-          ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff /run/current-system "$systemConfig"
-        '';
-      };
-      # reload the settings and apply them without the need to logout/login
-      postUserActivation.text = ''
-        /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-      '';
-      # https://github.com/LnL7/nix-darwin/issues/881
-      setFishAsShell.text = ''
-        dscl . -create /Users/${username} UserShell /run/current-system/sw/bin/fish
-      '';
-    };
-    checks = {
-      verifyNixChannels = false;
-    };
+    # # activationScripts run every time you boot the system or execute `darwin-rebuild`
+    # activationScripts = {
+    #   diff = {
+    #     supportsDryActivation = true;
+    #     text = ''
+    #       ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff /run/current-system "$systemConfig"
+    #     '';
+    #   };
+    #   # reload the settings and apply them without the need to logout/login ## Removed in 25.05
+    #   # postUserActivation.text = ''
+    #   #   /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    #   # '';
+    #   # https://github.com/LnL7/nix-darwin/issues/881
+    #   # setFishAsShell.text = ''
+    #   #   dscl . -create /Users/${username} UserShell /run/current-system/sw/bin/fish
+    #   # '';
+    # };
     defaults = {
       ".GlobalPreferences" = {
-        "com.apple.mouse.scaling" = 0.6875; # set mouse tracking speed
-        "com.apple.sound.beep.sound" = "/System/Library/Sounds/Tink.aiff"; # set alert sound to "Boop"
+        ## Sets the mouse tracking speed. Found in the “Mouse” section of “System Preferences”. Set to -1.0 to disable mouse
+        ## acceleration.
+        ##
+        ## Type: null or floating point number
+        ## Default: null
+        ## Example: -1.0
+        "com.apple.mouse.scaling" = 0.6875;
+
+        ## Sets the system-wide alert sound. Found under “Sound Effects” in the “Sound” section of “System Preferences”. Look in
+        ## “/System/Library/Sounds” for possible candidates.
+        ##
+        ## Type: null or absolute path
+        ## Default: null
+        "com.apple.sound.beep.sound" = "/System/Library/Sounds/Tink.aiff";
       };
+      ActivityMonitor = {
+        ## Change the icon in the dock when running.
+        ## - 0: Application Icon
+        ## - 2: Network Usage
+        ## - 3: Disk Activity
+        ## - 5: CPU Usage
+        ## - 6: CPU History Default is null.
+        ##
+        ## Type: null or signed integer
+        ## Default: null
+        IconType = null;
+
+        ## Open the main window when opening Activity Monitor. Default is true.
+        ##
+        ## Type: null or boolean
+        ## Default: null
+        OpenMainWindow = null;
+
+        ## Change which processes to show.
+        ## - 100: All Processes
+        ## - 101: All Processes, Hierarchally
+        ## - 102: My Processes
+        ## - 103: System Processes
+        ## - 104: Other User Processes
+        ## - 105: Active Processes
+        ## - 106: Inactive Processes
+        ## - 107: Windowed Processes Default is 100.
+        ##
+        ## Type: null or one of 100, 101, 102, 103, 104, 105, 106, 107
+        ## Default: null
+        ShowCategory = null;
+
+        ## Which column to sort the main activity page (such as “CPUUsage”). Default is null.
+        ##
+        ## Type: null or string
+        ## Default: null
+        SortColumn = null;
+
+        ## The sort direction of the sort column (0 is decending). Default is null.
+        ##
+        ## Type: null or signed integer
+        ## Default: null
+        SortDirection = null;
+      };
+
+      ## Sets custom system preferences
+      ##
+      ## Type: plist value
+      ## Default: { }
+      ## Example:
+      ## ```
+      ## {
+      ##   NSGlobalDomain = {
+      ##     TISRomanSwitchState = 1;
+      ##   };
+      ##   "com.apple.Safari" = {
+      ##     "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" = true;
+      ##   };
+      ## }
+      ## ```
+      CustomSystemPreferences = {};
+
+      ## Sets custom user preferences
+      ##
+      ## Type: plist value
+      ## Default: { }
+      ## Example:
+      ## ```
+      ## {
+      ##   NSGlobalDomain = {
+      ##     TISRomanSwitchState = 1;
+      ##   };
+      ##   "com.apple.Safari" = {
+      ##     "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" = true;
+      ##   };
+      ## }
+      ## ```
       CustomUserPreferences = {
         "com.apple.AdLib" = {
           allowApplePersonalizedAdvertising = false;
@@ -157,12 +245,18 @@
         "com.apple.TimeMachine".DoNotOfferNewDisksForBackup = true;
         # Turn on app auto-update
         "com.apple.commerce".autoUpdate = true;
-        "company.thebrowser.Browser" = {
-          arcMaxAutoOptInEnabled = 0;
-          currentAppIconName = "candy";
-          hasLaunchedBefore = 1;
+        NSGlobalDomain = {
+          NSStatusItemSelectionPadding = 6;
+          NSStatusItemSpacing = 6;
         };
       };
+
+      ## Whether to enable quarantine for downloaded applications. The default is true.
+      ##
+      ## Type: null or boolean
+      ## Default: null
+      LaunchServices.LSQuarantine = false;
+
       NSGlobalDomain = {
         AppleICUForce24HourTime = true;
         AppleInterfaceStyle = "Dark";
@@ -180,19 +274,21 @@
         NSNavPanelExpandedStateForSaveMode = true;
         NSNavPanelExpandedStateForSaveMode2 = true;
       };
-      LaunchServices = {
-        LSQuarantine = false;
-      };
       SoftwareUpdate = {
         AutomaticallyInstallMacOSUpdates = false;
       };
       dock = {
+        autohide = true;
+        autohide-delay = 0.0;
+        autohide-time-modifier = 0.0;
+        launchanim = false;
         orientation = "bottom";
         persistent-apps = [
-          "/System/Applications/Launchpad.app"
+          # "/System/Applications/Launchpad.app" # Before Tahoe
+          "/System/Applications/Apps.app" # After Tahoe
           "/System/Applications/System Settings.app"
           "/System/Applications/Music.app"
-          "/Users/${username}/Applications/Home Manager Apps/Arc.app"
+          "/Users/${username}/Applications/Home Manager Apps/Zen.app"
           "/Users/${username}/Applications/Home Manager Apps/Beeper Desktop.app"
           "/Users/${username}/Applications/Home Manager Apps/Microsoft Teams.app"
           "/Users/${username}/Applications/Home Manager Apps/Slack.app"
@@ -237,5 +333,6 @@
         TrackpadThreeFingerDrag = true; # enable three finger drag
       };
     };
+    primaryUser = "${username}";
   };
 }
