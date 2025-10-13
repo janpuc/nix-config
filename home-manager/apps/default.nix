@@ -8,7 +8,7 @@
     # ./microsoft-teams
     ./obsidian
     # ./orbstack
-    # ./raycast # INFO: Disabled
+    ./raycast
     ./slack
     # ./steam # INFO: Disabled
     ./utm
