@@ -58,11 +58,16 @@
         platform = "aarch64-darwin";
         desktop = "aqua";
       };
+      "jan.pucilowski@proteus" = helper.mkHome {
+        hostname = "proteus";
+        platform = "aarch64-darwin";
+        desktop = "aqua";
+      };
     };
     # nix run nix-darwin -- switch --flake ~/nix-config
     # nix build .#darwinConfigurations.{hostname}.config.system.build.toplevel
     darwinConfigurations = {
-      hashirama = helper.mkDarwin {hostname = "hashirama";};
+      hashirama = helper.mkDarwin {hostname = "proteus";};
     };
     # Custom packages and modifications, exported as overlays
     overlays = import ./overlays {inherit inputs;};

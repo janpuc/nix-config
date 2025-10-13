@@ -25,3 +25,10 @@ TODO:
   - [x] UTM
   - [ ] Whisky
   - [x] Zoom US
+
+Hostnames:
+- [ ] Sisyphus - Work MBP
+- [ ] Hermes - Personal MBA
+- [ ] Morpheus - Steam Deck
+- [ ] Apollo - PC
+- [ ] Proteus - Mac VM

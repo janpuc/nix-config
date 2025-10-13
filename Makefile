@@ -1,4 +1,4 @@
-HOSTNAME := hashirama
+HOSTNAME := proteus
 DIR := ${CURDIR}
 
 .PHONY: darwin-init darwin home-init home home-debug update history gc fmt clean
