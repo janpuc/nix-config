@@ -59,16 +59,16 @@
 
   nix.enable = false; # Needed for new Nix Determinate default comming in 1st of January
 
-#  nix = {
-#    optimise.automatic = true;
-#    settings = {
-#      experimental-features = [
-#        "nix-command"
-#        "flakes"
-#      ];
-#      warn-dirty = false;
-#    };
-#  };
+  #  nix = {
+  #    optimise.automatic = true;
+  #    settings = {
+  #      experimental-features = [
+  #        "nix-command"
+  #        "flakes"
+  #      ];
+  #      warn-dirty = false;
+  #    };
+  #  };
 
   networking.hostName = hostname;
   networking.computerName = hostname;
@@ -290,7 +290,7 @@
           "/System/Applications/Apps.app" # After Tahoe
           "/System/Applications/System Settings.app"
           "/System/Applications/Music.app"
-          "/Users/${username}/Applications/Home Manager Apps/Zen.app"
+          "/System/Applications/Safari.app"
           "/Users/${username}/Applications/Home Manager Apps/Beeper Desktop.app"
           "/Users/${username}/Applications/Home Manager Apps/Microsoft Teams.app"
           "/Users/${username}/Applications/Home Manager Apps/Slack.app"
