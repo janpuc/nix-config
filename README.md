@@ -17,7 +17,7 @@ TODO:
   - [x] Microsoft Teams
   - [x] Obsidian
   - [x] OrbStack
-  - [ ] Proton Drive
+  - [x] Proton Drive
   - [x] Raycast
   - [x] Slack
   - [ ] Spotify

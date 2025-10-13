@@ -8,6 +8,7 @@
     ./microsoft-teams
     ./obsidian
     ./orbstack
+    ./proton-drive
     ./raycast
     ./slack
     ./steam
