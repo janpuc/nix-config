@@ -1,0 +1,27 @@
+TODO:
+- [ ] Git setup
+- [ ] AWS configs
+- [ ] K8s Configs
+- [ ] Custom pkgs
+- [ ] VSCode settings
+- [ ] Shell settings
+- [ ] Secrets (1pass)
+- [ ] Dir backups (Development etc.)
+- [ ] Apps:
+  - [x] 1Password
+  - [x] Arc
+  - [ ] Bambu Studio
+  - [x] Beeper
+  - [ ] Factorio
+  - [x] Ghostty
+  - [ ] Immersed
+  - [x] Microsoft Teams
+  - [x] Obsidian
+  - [x] OrbStack
+  - [x] Raycast
+  - [x] Slack
+  - [ ] Steam
+  - [ ] Tailscale
+  - [x] UTM
+  - [ ] Whisky
+  - [x] Zoom US

@@ -1,0 +1,17 @@
+# This file defines overlays
+{inputs, ...}: {
+  additions = final: _prev: import ../pkgs final.pkgs;
+  # When applied, the unstable nixpkgs set (declared in the flake inputs) will
+  # be accessible through 'pkgs.unstable'
+  unstable-packages = final: _prev: {
+    unstable = import inputs.nixpkgs-unstable {
+      inherit (final) system;
+      config.allowUnfree = true;
+    };
+  };
+  # brew-nix = final: _prev: {
+  #   brew = import inputs.brew-nix.overlays.default {
+  #     inherit (final) system;
+  #   };
+  # };
+}
