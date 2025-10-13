@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ## TODO: Add a better way to disable programs
-    # ./bambu-studio
+    ./bambu-studio
     # ./beeper
     # ./factorio # TODO: Not yet added
     ./ghostty

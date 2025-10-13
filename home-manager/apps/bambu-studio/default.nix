@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home = {
     packages = with pkgs; [
-      bambu-studio
+      brewCasks.bambu-studio
     ];
   };
 }

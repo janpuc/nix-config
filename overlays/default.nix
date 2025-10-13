@@ -9,9 +9,9 @@
       config.allowUnfree = true;
     };
   };
-  # brew-nix = final: _prev: {
-  #   brew = import inputs.brew-nix.overlays.default {
-  #     inherit (final) system;
-  #   };
-  # };
+  brew-nix = final: _prev: {
+    brew = import inputs.brew-nix.overlays.default {
+      inherit (final) system;
+    };
+  };
 }
