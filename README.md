@@ -10,21 +10,22 @@ TODO:
 - [ ] Defaults
 - [ ] Apps:
   - [x] 1Password
-  - [ ] Bambu Studio
+  - [x] Bambu Studio
   - [x] Beeper
   - [ ] Factorio
   - [x] Ghostty
+  - [x] Lens
   - [x] Microsoft Teams
   - [x] Obsidian
   - [x] OrbStack
   - [ ] Proton Drive
   - [x] Raycast
-  - [ ] Safari addons (Kagi, wBlock)
   - [x] Slack
   - [ ] Spotify
   - [ ] Steam
   - [ ] Tailscale
   - [x] UTM
+  - [x] VSCode
   - [x] Zoom US
 
 Hostnames:

@@ -5,6 +5,7 @@
     ./beeper
     # ./factorio # TODO: Not yet added
     ./ghostty
+    ./lens
     ./microsoft-teams
     ./obsidian
     ./orbstack
