@@ -12,7 +12,6 @@ TODO:
   - [x] 1Password
   - [x] Bambu Studio
   - [x] Beeper
-  - [ ] Factorio
   - [x] Ghostty
   - [x] Lens
   - [x] Microsoft Teams
