@@ -57,16 +57,18 @@
     ];
   };
 
-  nix = {
-    optimise.automatic = true;
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      warn-dirty = false;
-    };
-  };
+  nix.enable = false; # Needed for new Nix Determinate default comming in 1st of January
+
+#  nix = {
+#    optimise.automatic = true;
+#    settings = {
+#      experimental-features = [
+#        "nix-command"
+#        "flakes"
+#      ];
+#      warn-dirty = false;
+#    };
+#  };
 
   networking.hostName = hostname;
   networking.computerName = hostname;

@@ -4,7 +4,7 @@ DIR := ${CURDIR}
 .PHONY: darwin-init darwin home-init home home-debug update history gc fmt clean
 
 darwin-init:
-	nix run nix-darwin -- switch --flake .#$(HOSTNAME)
+	sudo "$$(nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .#$(HOSTNAME) 2>&1 > /dev/null | cut -d ":" -f1)" switch --flake .#$(HOSTNAME)
 
 darwin:
 	nh darwin switch .#darwinConfigurations.$(HOSTNAME)
@@ -37,8 +37,8 @@ fmt:
 clean:
 	rm -rf result
 
-link:
-	ln -s "$(DIR)" ~/nix-config
+cp:
+	cp -r "$(DIR)" ~/nix-config
 
 init-nix:
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
