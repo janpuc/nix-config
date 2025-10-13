@@ -20,7 +20,7 @@ TODO:
   - [x] Proton Drive
   - [x] Raycast
   - [x] Slack
-  - [ ] Spotify
+  - [x] Spotify
   - [x] Steam
   - [ ] Tailscale
   - [x] UTM

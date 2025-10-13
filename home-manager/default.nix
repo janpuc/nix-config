@@ -31,6 +31,7 @@ in {
     bat.enable = true;
     fish.enable = true;
     fzf.enable = true;
+    spotify-player.enable = true;
     starship.enable = true;
     yazi.enable = true;
   };

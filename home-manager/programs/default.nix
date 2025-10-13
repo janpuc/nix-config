@@ -18,6 +18,7 @@
     ./jq
     ./nix-index
     ./ripgrep
+    ./spotify-player
     ./ssh
     ./starship
     ./yazi
