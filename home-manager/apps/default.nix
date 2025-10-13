@@ -11,7 +11,7 @@
     ./orbstack
     ./raycast
     ./slack
-    # ./steam # INFO: Disabled
+    ./steam
     ./utm
     ./vscode
     ./zoom-us

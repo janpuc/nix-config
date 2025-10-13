@@ -21,7 +21,7 @@ TODO:
   - [x] Raycast
   - [x] Slack
   - [ ] Spotify
-  - [ ] Steam
+  - [x] Steam
   - [ ] Tailscale
   - [x] UTM
   - [x] VSCode
