@@ -286,9 +286,9 @@
         launchanim = false;
         orientation = "bottom";
         persistent-apps = [
-          "/System/Applications/Apps.app" # After Tahoe
+          "/System/Applications/Apps.app"
           "/System/Applications/System Settings.app"
-          "/System/Applications/Music.app"
+          "/Users/${username}/Applications/Home Manager Apps/Spotify.app"
           "/Applications/Safari.app"
           "/Users/${username}/Applications/Home Manager Apps/Beeper Desktop.app"
           "/Users/${username}/Applications/Home Manager Apps/Microsoft Teams.app"
