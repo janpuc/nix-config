@@ -11,7 +11,7 @@
     ./proton-drive
     ./raycast
     ./slack
-    # ./spotify
+    ./spotify
     ./steam
     ./utm
     ./vscode
