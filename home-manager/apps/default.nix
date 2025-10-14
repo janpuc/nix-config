@@ -5,6 +5,7 @@
     ./beeper
     ./ghostty
     ./lens
+    ./mas-apps
     ./microsoft-teams
     ./obsidian
     ./orbstack
