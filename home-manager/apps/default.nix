@@ -5,7 +5,6 @@
     ./beeper
     ./ghostty
     ./lens
-    ./mas-apps
     ./microsoft-teams
     ./obsidian
     ./orbstack
@@ -14,7 +13,6 @@
     ./slack
     # ./spotify
     ./steam
-    # ./tailscale
     ./utm
     ./vscode
     ./zoom-us

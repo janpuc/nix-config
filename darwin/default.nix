@@ -10,6 +10,7 @@
   ...
 }: {
   imports = [
+    inputs.nix-homebrew.darwinModules.nix-homebrew
     inputs.nix-index-database.darwinModules.nix-index
   ];
 
@@ -69,6 +70,12 @@
   #    };
   #  };
 
+  nix-homebrew = {
+    enable = true;
+    enableRosetta = true;
+    user = "${username}";
+  };
+
   networking.hostName = hostname;
   networking.computerName = hostname;
 
@@ -89,16 +96,25 @@
     nix-index-database.comma.enable = true;
   };
 
+  homebrew = {
+    enable = true;
+    onActivation.autoUpdate = true;
+    onActivation.upgrade = true;
+    masApps = {
+      # Apps
+      "Steam Link" = 1246969117;
+      "Tailscale" = 1470499037;
+      # Safari addons
+      "Kagi for Safari" = 1558453954;
+      "wBlock" = 6746388723;
+    };
+  };
+
   # Enable TouchID for sudo authentication
   security.pam.services.sudo_local.touchIdAuth = true;
 
   system = {
     # activationScripts run every time you boot the system or execute `darwin-rebuild`
-    activationScripts = {
-      extraActivation.text = ''
-        softwareupdate --install-rosetta --agree-to-license
-      '';
-    };
     defaults = {
       ".GlobalPreferences" = {
         ## Sets the mouse tracking speed. Found in the “Mouse” section of “System Preferences”. Set to -1.0 to disable mouse
