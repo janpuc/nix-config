@@ -58,12 +58,10 @@
       "jan.pucilowski@hashirama" = helper.mkHome {
         hostname = "hashirama";
         platform = "aarch64-darwin";
-        desktop = "aqua";
       };
       "jan.pucilowski@proteus" = helper.mkHome {
         hostname = "proteus";
         platform = "aarch64-darwin";
-        desktop = "aqua";
       };
     };
     # nix run nix-darwin -- switch --flake ~/nix-config
