@@ -41,7 +41,7 @@
           stateVersion
           ;
       };
-      modules = [../darwin];
+      modules = [../hosts/${hostname}/system];
     };
 
   forAllSystems = inputs.nixpkgs.lib.genAttrs [
