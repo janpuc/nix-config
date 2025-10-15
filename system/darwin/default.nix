@@ -57,6 +57,7 @@
 
   system = {
     # activationScripts run every time you boot the system or execute `darwin-rebuild`
+    activationScripts.postActivation.text = ''sudo chsh -s /run/current-system/sw/bin/fish'';
     defaults = {
       ".GlobalPreferences" = {
         ## Sets the mouse tracking speed. Found in the “Mouse” section of “System Preferences”. Set to -1.0 to disable mouse
