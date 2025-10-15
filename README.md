@@ -1,3 +1,8 @@
+# Bootstrap
+```bash
+/bin/zsh -c "$(curl -fsSL https://nix.janpuc.com)" -- <HOSTNAME>
+```
+
 TODO:
 - [ ] Git setup
 - [ ] AWS configs
