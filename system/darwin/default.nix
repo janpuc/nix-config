@@ -12,34 +12,8 @@
   imports = [
     inputs.nix-homebrew.darwinModules.nix-homebrew
     inputs.nix-index-database.darwinModules.nix-index
+    ../common
   ];
-
-  system.stateVersion = 5;
-
-  # Only install the docs I use
-  documentation.enable = true;
-  documentation.doc.enable = false;
-  documentation.info.enable = false;
-  documentation.man.enable = true;
-
-  environment = {
-    shells = [pkgs.fish];
-    systemPackages = with pkgs; [
-      git
-      m-cli
-      mas
-      nix-output-monitor
-      nvd
-      plistwatch
-      sops
-    ];
-
-    variables = {
-      EDITOR = "nano";
-      SYSTEMD_EDITOR = "nano";
-      VISUAL = "nano";
-    };
-  };
 
   nixpkgs = {
     # Configure your nixpkgs instance
@@ -57,31 +31,23 @@
     ];
   };
 
-  nix.enable = false; # Needed for new Nix Determinate default comming in 1st of January
-
-  #  nix = {
-  #    optimise.automatic = true;
-  #    settings = {
-  #      experimental-features = [
-  #        "nix-command"
-  #        "flakes"
-  #      ];
-  #      warn-dirty = false;
-  #    };
-  #  };
-
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
     user = "${username}";
   };
 
-  networking.hostName = hostname;
-  networking.computerName = hostname;
+  nixpkgs = {
+    config.allowUnfree = true;
+    hostPlatform = lib.mkDefault "${platform}";
+    overlays = [
+      outputs.overlays.additions
+      outputs.overlays.unstable-packages
+      inputs.brew-nix.overlays.default
+    ];
+  };
 
   programs = {
-    _1password.enable = true;
-    _1password-gui.enable = true;
     fish = {
       enable = true;
       # shellAliases = {
@@ -100,14 +66,6 @@
     enable = true;
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
-    # masApps = {
-    #   # Apps
-    #   "Steam Link" = 1246969117;
-    #   "Tailscale" = 1470499037;
-    #   # Safari addons
-    #   "Kagi for Safari" = 1558453954;
-    #   "wBlock" = 6746388723;
-    # };
   };
 
   # Enable TouchID for sudo authentication
