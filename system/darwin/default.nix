@@ -204,6 +204,7 @@
 
       NSGlobalDomain = {
         AppleICUForce24HourTime = true;
+        # AppleIconAppearanceTheme = "ClearDark"; # After nix-darwin 25.11 is released
         AppleInterfaceStyle = "Dark";
         AppleInterfaceStyleSwitchesAutomatically = false;
         AppleMeasurementUnits = "Centimeters";
