@@ -194,6 +194,11 @@ in {
       OCI_CLI_RC_FILE = "~/.config/oci/config";
     };
     shellAliases = {
+      # Nix aliases
+      nix-darwin = ''nh darwin switch ~/nix-config#darwinConfigurations.$(hostname)'';
+      nix-home = "nh home switch ~/nix-config";
+      nix-update = "nix flake update";
+
       cat = "${pkgs.bat}/bin/bat --paging=never";
       less = "${pkgs.bat}/bin/bat";
       reload = "exec $SHELL -l";
