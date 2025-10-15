@@ -19,10 +19,29 @@ in {
     inputs._1password-shell-plugins.hmModules.default
     inputs.catppuccin.homeModules.catppuccin
     inputs.nix-index-database.homeModules.nix-index
-    ./apps
-    ./config
-    ./programs
-    ./scripts
+
+    ../../../home-manager/config
+    ../../../home-manager/programs
+    ../../../home-manager/scripts
+
+    # Common apps
+    ../../../home-manager/apps/common/ghostty
+    ../../../home-manager/apps/common/lens
+    ../../../home-manager/apps/common/obsidian
+    ../../../home-manager/apps/common/slack
+    ../../../home-manager/apps/common/spotify
+    ../../../home-manager/apps/common/vscode
+    ../../../home-manager/apps/common/zoom-us
+
+    # Darwin apps
+    ../../../home-manager/apps/darwin/bambu-studio
+    ../../../home-manager/apps/darwin/beeper
+    ../../../home-manager/apps/darwin/microsoft-teams
+    ../../../home-manager/apps/darwin/orbstack
+    ../../../home-manager/apps/darwin/proton-drive
+    ../../../home-manager/apps/darwin/raycast
+    ../../../home-manager/apps/darwin/steam
+    ../../../home-manager/apps/darwin/utm
   ];
 
   catppuccin = {

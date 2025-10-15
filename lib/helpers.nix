@@ -22,7 +22,7 @@
           stateVersion
           ;
       };
-      modules = [../home-manager];
+      modules = [../hosts/${hostname}/home];
     };
 
   mkDarwin = {
