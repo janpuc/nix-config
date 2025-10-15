@@ -15,22 +15,6 @@
     ../common
   ];
 
-  nixpkgs = {
-    # Configure your nixpkgs instance
-    config.allowUnfree = true;
-    hostPlatform = lib.mkDefault "${platform}";
-    # You can add overlays here
-    overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.additions
-      #outputs.overlays.modifications
-      outputs.overlays.unstable-packages
-      # Add overlays exported from other flakes:
-      # outputs.overlays.brew-nix
-      inputs.brew-nix.overlays.default
-    ];
-  };
-
   nix-homebrew = {
     enable = true;
     enableRosetta = true;

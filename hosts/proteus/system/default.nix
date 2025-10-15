@@ -10,7 +10,7 @@
   ...
 }: {
   imports = [
-    ../../system/darwin
+    ../../../system/darwin
   ];
 
   programs = {
