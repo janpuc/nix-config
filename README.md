@@ -34,7 +34,7 @@ TODO:
 
 Hostnames:
 - [ ] Sisyphus - Work MBP
-- [ ] Hermes - Personal MBA
+- [x] Hermes - Personal MBA
 - [ ] Morpheus - Steam Deck
 - [ ] Apollo - PC
-- [ ] Proteus - Mac VM
+- [x] Proteus - Mac VM
