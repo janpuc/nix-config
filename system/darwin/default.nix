@@ -273,7 +273,8 @@
       trackpad = {
         Clicking = true;
         TrackpadRightClick = true; # enable two finger right click
-        TrackpadThreeFingerDrag = true; # enable three finger drag
+        TrackpadThreeFingerDrag = false; # disable three finger drag
+        TrackpadThreeFingerTapGesture = 2;
       };
     };
     primaryUser = "${username}";
