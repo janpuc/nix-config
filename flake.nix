@@ -67,7 +67,7 @@
     # nix run nix-darwin -- switch --flake ~/nix-config
     # nix build .#darwinConfigurations.{hostname}.config.system.build.toplevel
     darwinConfigurations = {
-      hashirama = helper.mkDarwin {hostname = "hermes";};
+      hermes = helper.mkDarwin {hostname = "hermes";};
       proteus = helper.mkDarwin {hostname = "proteus";};
     };
     # Custom packages and modifications, exported as overlays
