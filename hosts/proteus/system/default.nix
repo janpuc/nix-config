@@ -19,13 +19,13 @@
   };
 
   homebrew = {
-    # masApps = {
-    #   # Apps
-    #   "Steam Link" = 1246969117;
-    #   "Tailscale" = 1470499037;
-    #   # Safari addons
-    #   "Kagi for Safari" = 1558453954;
-    #   "wBlock" = 6746388723;
-    # };
+    masApps = {
+      # Apps
+      "Steam Link" = 1246969117;
+      "Tailscale" = 1475387142;
+      # Safari addons
+      "Kagi for Safari" = 1622835804;
+      # "wBlock" = 6746388723;
+    };
   };
 }
