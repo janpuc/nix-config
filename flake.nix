@@ -55,8 +55,8 @@
     # home-manager switch -b backup --flake $HOME/nix-config
     # nix run nixpkgs#home-manager -- switch -b backup --flake "${HOME}/nix-config"
     homeConfigurations = {
-      "jan.pucilowski@hashirama" = helper.mkHome {
-        hostname = "hashirama";
+      "jan.pucilowski@hermes" = helper.mkHome {
+        hostname = "hermes";
         platform = "aarch64-darwin";
       };
       "jan.pucilowski@proteus" = helper.mkHome {
@@ -67,7 +67,7 @@
     # nix run nix-darwin -- switch --flake ~/nix-config
     # nix build .#darwinConfigurations.{hostname}.config.system.build.toplevel
     darwinConfigurations = {
-      hashirama = helper.mkDarwin {hostname = "hashirama";};
+      hashirama = helper.mkDarwin {hostname = "hermes";};
       proteus = helper.mkDarwin {hostname = "proteus";};
     };
     # Custom packages and modifications, exported as overlays
