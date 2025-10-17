@@ -303,7 +303,7 @@
           "/System/Applications/Apps.app"
           "/System/Applications/System Settings.app"
           "/Users/${username}/Applications/Home Manager Apps/Spotify.app"
-          "/Applications/Safari.app"
+          "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
           "/Users/${username}/Applications/Home Manager Apps/Beeper Desktop.app"
           "/Users/${username}/Applications/Home Manager Apps/Microsoft Teams.app"
           "/Users/${username}/Applications/Home Manager Apps/Slack.app"
