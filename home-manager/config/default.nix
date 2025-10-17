@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./apps
+    ./keybindings
     ./oci
   ];
 }
