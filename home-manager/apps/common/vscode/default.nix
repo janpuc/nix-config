@@ -27,25 +27,6 @@
         skellock.just # justfile lint
       ];
 
-      keybindings = [
-        # Needed for MacOS window management shortcuts
-        {
-          key = "ctrl+shift+alt+cmd+right";
-          command = "quickInput.acceptInBackground";
-          when = "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inputFocus && quickInputType == 'quickPick'";
-        }
-        {
-          key = "ctrl+shift+alt+cmd+down";
-          command = "quickInput.nextSeparator";
-          when = "inQuickInput && quickInputType == 'quickPick' || inQuickInput && quickInputType == 'quickTree'";
-        }
-        {
-          key = "ctrl+shift+alt+cmd+up";
-          command = "quickInput.previousSeparator";
-          when = "inQuickInput && quickInputType == 'quickPick' || inQuickInput && quickInputType == 'quickTree'";
-        }
-      ];
-
       userSettings = {
         # global
         "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
