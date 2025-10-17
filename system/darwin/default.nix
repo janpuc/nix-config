@@ -56,6 +56,10 @@
   security.pam.services.sudo_local.touchIdAuth = true;
 
   system = {
+    activationScripts.postActivation.text = ''
+      # Following line should allow us to avoid a logout/login cycle when changing settings
+      sudo -u ${username} /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    '';
     defaults = {
       ".GlobalPreferences" = {
         ## Sets the mouse tracking speed. Found in the “Mouse” section of “System Preferences”. Set to -1.0 to disable mouse
@@ -184,6 +188,74 @@
           AutomaticDownload = 0;
           # Install System data files & security updates;
           CriticalUpdateInstall = 1;
+        };
+        # Keyboard Shortcuts
+        "com.apple.symbolichotkeys" = {
+          AppleSymbolicHotKeys = {
+            # Windows -> General -> Fill
+            "237" = {
+              enabled = true;
+              value = {
+                # Ctrl + Option + Cmd + Enter
+                parameters = [65535 36 1835008];
+                type = "standard";
+              };
+            };
+            # Windows -> General -> Center
+            "238" = {
+              enabled = true;
+              value = {
+                # Ctrl + Option + Cmd + \
+                parameters = [92 42 1835008];
+                type = "standard";
+              };
+            };
+            # Windows -> General -> Return to Previous Size
+            "239" = {
+              enabled = true;
+              value = {
+                # Ctrl + Option + Cmd + /
+                parameters = [47 44 1835008];
+                type = "standard";
+              };
+            };
+            # Windows -> Halves -> Tile Left Half
+            "240" = {
+              enabled = true;
+              value = {
+                # Ctrl + Option + Cmd + Left Arrow
+                parameters = [65535 123 10223616];
+                type = "standard";
+              };
+            };
+            # Windows -> Halves -> Tile Right Half
+            "241" = {
+              enabled = true;
+              value = {
+                # Ctrl + Option + Cmd + Right Arrow
+                parameters = [65535 124 10223616];
+                type = "standard";
+              };
+            };
+            # Windows -> Halves -> Tile Top Half
+            "242" = {
+              enabled = true;
+              value = {
+                # Ctrl + Option + Cmd + Up Arrow
+                parameters = [65535 126 10223616];
+                type = "standard";
+              };
+            };
+            # Windows -> Halves -> Tile Bottom Half
+            "243" = {
+              enabled = true;
+              value = {
+                # Ctrl + Option + Cmd + Down Arrow
+                parameters = [65535 125 10223616];
+                type = "standard";
+              };
+            };
+          };
         };
         "com.apple.TimeMachine".DoNotOfferNewDisksForBackup = true;
         # Turn on app auto-update
