@@ -196,8 +196,8 @@
             "237" = {
               enabled = true;
               value = {
-                # Ctrl + Option + Cmd + Enter
-                parameters = [65535 36 1835008];
+                # Ctrl + Option + Enter
+                parameters = [65535 36 786432];
                 type = "standard";
               };
             };
@@ -205,8 +205,8 @@
             "238" = {
               enabled = true;
               value = {
-                # Ctrl + Option + Cmd + \
-                parameters = [92 42 1835008];
+                # Ctrl + Option + \
+                parameters = [92 42 786432];
                 type = "standard";
               };
             };
@@ -214,8 +214,8 @@
             "239" = {
               enabled = true;
               value = {
-                # Ctrl + Option + Cmd + /
-                parameters = [47 44 1835008];
+                # Ctrl + Option + /
+                parameters = [47 44 786432];
                 type = "standard";
               };
             };
@@ -223,8 +223,8 @@
             "240" = {
               enabled = true;
               value = {
-                # Ctrl + Option + Cmd + Left Arrow
-                parameters = [65535 123 10223616];
+                # Ctrl + Option + Left Arrow
+                parameters = [65535 123 9175040];
                 type = "standard";
               };
             };
@@ -232,8 +232,8 @@
             "241" = {
               enabled = true;
               value = {
-                # Ctrl + Option + Cmd + Right Arrow
-                parameters = [65535 124 10223616];
+                # Ctrl + Option + Right Arrow
+                parameters = [65535 124 9175040];
                 type = "standard";
               };
             };
@@ -241,8 +241,8 @@
             "242" = {
               enabled = true;
               value = {
-                # Ctrl + Option + Cmd + Up Arrow
-                parameters = [65535 126 10223616];
+                # Ctrl + Option + Up Arrow
+                parameters = [65535 126 9175040];
                 type = "standard";
               };
             };
@@ -250,8 +250,8 @@
             "243" = {
               enabled = true;
               value = {
-                # Ctrl + Option + Cmd + Down Arrow
-                parameters = [65535 125 10223616];
+                # Ctrl + Option + Down Arrow
+                parameters = [65535 125 9175040];
                 type = "standard";
               };
             };
