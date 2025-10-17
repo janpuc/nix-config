@@ -4,6 +4,8 @@
   pkgs,
   ...
 }: {
+  targets.darwin.linkApps.enable = false;
+
   # Home-manager does not link installed applications to the user environment. This means apps will not show up
   # in spotlight, and when launched through the dock they come with a terminal window. This is a workaround.
   # Upstream issue: https://github.com/nix-community/home-manager/issues/1341
