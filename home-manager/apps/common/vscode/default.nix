@@ -28,7 +28,18 @@
       ];
 
       keybindings = [
-        # Needed for MacOS window management shortcuts
+        # Remapping eeded for MacOS window management shortcuts
+
+        # Remove existing bindings
+        {
+          key = "ctrl+alt+left";
+          command = "-cursorWordPartLeft";
+        }
+        {
+          key = "ctrl+alt+right";
+          command = "-cursorWordPartRight";
+        }
+        # Add remapped ones
         {
           key = "ctrl+shift+alt+cmd+left";
           command = "cursorWordPartLeft";
