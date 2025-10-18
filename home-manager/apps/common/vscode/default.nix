@@ -59,6 +59,7 @@
       userSettings = {
         # global
         "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
+        "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
         # nix
         "[nix]" = {
           "editor.formatOnPaste" = true;
