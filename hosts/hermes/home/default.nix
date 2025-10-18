@@ -88,6 +88,7 @@ in
         # Nix
         nixd
         nixfmt-rfc-style
+
         # sketchybar
         #asciicam # Terminal webcam #TODO: Move to linux only
         #asciinema-agg # Convert aciinema to .gif
