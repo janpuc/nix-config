@@ -3,13 +3,15 @@
   outputs,
   stateVersion,
   ...
-}: {
+}:
+{
   # Helper function for generating home-manager configs
-  mkHome = {
-    hostname,
-    username ? "jan.pucilowski",
-    platform ? "aarch64-darwin",
-  }:
+  mkHome =
+    {
+      hostname,
+      username ? "jan.pucilowski",
+      platform ? "aarch64-darwin",
+    }:
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = inputs.nixpkgs.legacyPackages.${platform};
       extraSpecialArgs = {
@@ -22,14 +24,15 @@
           stateVersion
           ;
       };
-      modules = [../hosts/${hostname}/home];
+      modules = [ ../hosts/${hostname}/home ];
     };
 
-  mkDarwin = {
-    hostname,
-    username ? "jan.pucilowski",
-    platform ? "aarch64-darwin",
-  }:
+  mkDarwin =
+    {
+      hostname,
+      username ? "jan.pucilowski",
+      platform ? "aarch64-darwin",
+    }:
     inputs.nix-darwin.lib.darwinSystem {
       specialArgs = {
         inherit
@@ -41,7 +44,7 @@
           stateVersion
           ;
       };
-      modules = [../hosts/${hostname}/system];
+      modules = [ ../hosts/${hostname}/system ];
     };
 
   forAllSystems = inputs.nixpkgs.lib.genAttrs [

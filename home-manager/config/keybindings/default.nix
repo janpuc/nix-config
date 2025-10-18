@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   targets.darwin.keybindings = {
     # Resolve MacOS invalid key sound per https://github.com/microsoft/vscode/issues/44070
     "@^\UF700" = "noop:";

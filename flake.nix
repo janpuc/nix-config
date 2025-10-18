@@ -40,41 +40,44 @@
 
     fh.url = "https://flakehub.com/f/DeterminateSystems/fh/0";
   };
-  outputs = {
-    self,
-    nix-darwin,
-    nixpkgs,
-    brew-nix,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-    # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-    stateVersion = "25.05";
-    helper = import ./lib {inherit inputs outputs stateVersion;};
-  in {
-    # home-manager switch -b backup --flake $HOME/nix-config
-    # nix run nixpkgs#home-manager -- switch -b backup --flake "${HOME}/nix-config"
-    homeConfigurations = {
-      "jan.pucilowski@hermes" = helper.mkHome {
-        hostname = "hermes";
-        platform = "aarch64-darwin";
+  outputs =
+    {
+      self,
+      nix-darwin,
+      nixpkgs,
+      brew-nix,
+      ...
+    }@inputs:
+    let
+      inherit (self) outputs;
+      # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+      stateVersion = "25.05";
+      helper = import ./lib { inherit inputs outputs stateVersion; };
+    in
+    {
+      # home-manager switch -b backup --flake $HOME/nix-config
+      # nix run nixpkgs#home-manager -- switch -b backup --flake "${HOME}/nix-config"
+      homeConfigurations = {
+        "jan.pucilowski@hermes" = helper.mkHome {
+          hostname = "hermes";
+          platform = "aarch64-darwin";
+        };
+        "jan.pucilowski@proteus" = helper.mkHome {
+          hostname = "proteus";
+          platform = "aarch64-darwin";
+        };
       };
-      "jan.pucilowski@proteus" = helper.mkHome {
-        hostname = "proteus";
-        platform = "aarch64-darwin";
+      # nix run nix-darwin -- switch --flake ~/nix-config
+      # nix build .#darwinConfigurations.{hostname}.config.system.build.toplevel
+      darwinConfigurations = {
+        hermes = helper.mkDarwin { hostname = "hermes"; };
+        proteus = helper.mkDarwin { hostname = "proteus"; };
       };
+      # Custom packages and modifications, exported as overlays
+      overlays = import ./overlays { inherit inputs; };
+      # Custom packages; acessible via 'nix build', 'nix shell', etc
+      packages = helper.forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+      # Formatter for .nix files, accessible via 'nix fmt'
+      formatter = helper.forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
     };
-    # nix run nix-darwin -- switch --flake ~/nix-config
-    # nix build .#darwinConfigurations.{hostname}.config.system.build.toplevel
-    darwinConfigurations = {
-      hermes = helper.mkDarwin {hostname = "hermes";};
-      proteus = helper.mkDarwin {hostname = "proteus";};
-    };
-    # Custom packages and modifications, exported as overlays
-    overlays = import ./overlays {inherit inputs;};
-    # Custom packages; acessible via 'nix build', 'nix shell', etc
-    packages = helper.forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-    # Formatter for .nix files, accessible via 'nix fmt'
-    formatter = helper.forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
-  };
 }

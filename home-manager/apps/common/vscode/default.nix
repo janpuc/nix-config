@@ -2,7 +2,8 @@
   hostname,
   pkgs,
   ...
-}: {
+}:
+{
   programs.vscode = {
     enable = true;
     # package = pkgs.vscodium; # INFO: Switch to plain VSCode before I figure out how to add cpp, copilot etc. to VSCodium
@@ -68,10 +69,12 @@
           "enableLanguageServer" = true;
           "serverPath" = "nixd";
           "serverSettings.nixd" = {
-            "formatting.command" = ["nixfmt"];
+            "formatting.command" = [ "nixfmt" ];
             "options" = {
-              "home-manager.expr" = "(builtins.getFlake (builtins.toString ./.)).homeConfigurations.${hostname}.options";
-              "nix-darwin.expr" = "(builtins.getFlake (builtins.toString ./.)).darwinConfigurations.${hostname}.options";
+              "home-manager.expr" =
+                "(builtins.getFlake (builtins.toString ./.)).homeConfigurations.${hostname}.options";
+              "nix-darwin.expr" =
+                "(builtins.getFlake (builtins.toString ./.)).darwinConfigurations.${hostname}.options";
             };
           };
         };

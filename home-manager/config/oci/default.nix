@@ -1,6 +1,8 @@
-{...}: let
+{ ... }:
+let
   vault = "Private";
-in {
+in
+{
   home.file.".config/oci/op.env".text = ''
     OCI_CLI_KEY_CONTENT="op://${vault}/oci_api_key/private key"
     OCI_CLI_FINGERPRINT="op://${vault}/oci/fingerprint"

@@ -8,7 +8,8 @@
   platform,
   username,
   ...
-}: {
+}:
+{
   imports = [
     ../../../system/darwin
   ];

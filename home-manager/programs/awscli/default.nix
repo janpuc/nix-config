@@ -1,6 +1,8 @@
-{username, ...}: let
+{ username, ... }:
+let
   vault = "Work";
-in {
+in
+{
   programs = {
     awscli = {
       enable = true;

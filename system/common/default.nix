@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   system.stateVersion = 5;
 
   # Only install the docs I use
@@ -13,7 +14,7 @@
   documentation.man.enable = true;
 
   environment = {
-    shells = [pkgs.fish];
+    shells = [ pkgs.fish ];
     systemPackages = with pkgs; [
       git
       m-cli

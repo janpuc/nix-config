@@ -8,9 +8,11 @@
   stateVersion,
   username,
   ...
-}: let
+}:
+let
   inherit (pkgs.stdenv) isDarwin isLinux;
-in {
+in
+{
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.examle
@@ -58,18 +60,16 @@ in {
   home = {
     inherit stateVersion;
     inherit username;
-    homeDirectory =
-      if isDarwin
-      then "/Users/${username}"
-      else "/home/${username}";
+    homeDirectory = if isDarwin then "/Users/${username}" else "/home/${username}";
 
-    file = {};
+    file = { };
 
     preferXdgDirectories = true;
 
     # A Modern Unix expirience
     # https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/
-    packages = with pkgs;
+    packages =
+      with pkgs;
       [
         oci-cli
         # terraform

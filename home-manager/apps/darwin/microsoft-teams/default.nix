@@ -1,8 +1,8 @@
 {
-  lib,
   pkgs,
   ...
-}: {
+}:
+{
   home = {
     packages = with pkgs; [
       (brewCasks.microsoft-teams.overrideAttrs (oldAttrs: {

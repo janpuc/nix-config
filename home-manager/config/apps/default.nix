@@ -3,18 +3,20 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   targets.darwin.linkApps.enable = false;
 
   # Home-manager does not link installed applications to the user environment. This means apps will not show up
   # in spotlight, and when launched through the dock they come with a terminal window. This is a workaround.
   # Upstream issue: https://github.com/nix-community/home-manager/issues/1341
   home.activation = {
-    checkAppManagementPermission = let
-      sudo = lib.getExe' pkgs.darwin.sudo "sudo";
-      touch = lib.getExe' pkgs.coreutils "touch";
-    in
-      lib.hm.dag.entryBefore ["linkApps"] ''
+    checkAppManagementPermission =
+      let
+        sudo = lib.getExe' pkgs.darwin.sudo "sudo";
+        touch = lib.getExe' pkgs.coreutils "touch";
+      in
+      lib.hm.dag.entryBefore [ "linkApps" ] ''
         ensureAppManagement() {
           for appBundle in ~/Applications/Home\ Manager\ Apps/*.app; do
             if [[ -d "$appBundle" ]]; then
@@ -62,14 +64,15 @@
           fi
         fi
       '';
-    linkApps = lib.hm.dag.entryAfter ["installPackages"] (
+    linkApps = lib.hm.dag.entryAfter [ "installPackages" ] (
       let
         applications = pkgs.buildEnv {
           name = "user-applications";
           paths = config.home.packages;
           pathsToLink = "/Applications";
         };
-      in ''
+      in
+      ''
         targetFolder='Applications/Home Manager Apps'
 
         echo "setting up ~/$targetFolder..." >&2

@@ -8,7 +8,8 @@
   platform,
   username,
   ...
-}: {
+}:
+{
   imports = [
     inputs.nix-homebrew.darwinModules.nix-homebrew
     inputs.nix-index-database.darwinModules.nix-index
@@ -137,7 +138,7 @@
       ##   };
       ## }
       ## ```
-      CustomSystemPreferences = {};
+      CustomSystemPreferences = { };
 
       ## Sets custom user preferences
       ##
@@ -197,7 +198,11 @@
               enabled = true;
               value = {
                 # Ctrl + Option + Enter
-                parameters = [65535 36 786432];
+                parameters = [
+                  65535
+                  36
+                  786432
+                ];
                 type = "standard";
               };
             };
@@ -206,7 +211,11 @@
               enabled = true;
               value = {
                 # Ctrl + Option + \
-                parameters = [92 42 786432];
+                parameters = [
+                  92
+                  42
+                  786432
+                ];
                 type = "standard";
               };
             };
@@ -215,7 +224,11 @@
               enabled = true;
               value = {
                 # Ctrl + Option + /
-                parameters = [47 44 786432];
+                parameters = [
+                  47
+                  44
+                  786432
+                ];
                 type = "standard";
               };
             };
@@ -224,7 +237,11 @@
               enabled = true;
               value = {
                 # Ctrl + Option + Left Arrow
-                parameters = [65535 123 9175040];
+                parameters = [
+                  65535
+                  123
+                  9175040
+                ];
                 type = "standard";
               };
             };
@@ -233,7 +250,11 @@
               enabled = true;
               value = {
                 # Ctrl + Option + Right Arrow
-                parameters = [65535 124 9175040];
+                parameters = [
+                  65535
+                  124
+                  9175040
+                ];
                 type = "standard";
               };
             };
@@ -242,7 +263,11 @@
               enabled = true;
               value = {
                 # Ctrl + Option + Up Arrow
-                parameters = [65535 126 9175040];
+                parameters = [
+                  65535
+                  126
+                  9175040
+                ];
                 type = "standard";
               };
             };
@@ -251,7 +276,11 @@
               enabled = true;
               value = {
                 # Ctrl + Option + Down Arrow
-                parameters = [65535 125 9175040];
+                parameters = [
+                  65535
+                  125
+                  9175040
+                ];
                 type = "standard";
               };
             };
@@ -312,7 +341,7 @@
           "/Applications/1Password.app"
           "/Users/${username}/Applications/Home Manager Apps/UTM.app"
         ];
-        persistent-others = ["/Users/${username}/Downloads"];
+        persistent-others = [ "/Users/${username}/Downloads" ];
         show-recents = false;
         tilesize = 48;
         # Disable hot corners
