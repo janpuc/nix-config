@@ -27,6 +27,20 @@
         skellock.just # justfile lint
       ];
 
+      keybindings = [
+        # Needed for MacOS window management shortcuts
+        {
+          key = "ctrl+shift+alt+cmd+left";
+          command = "cursorWordPartLeft";
+          when = "textInputFocus";
+        }
+        {
+          key = "ctrl+shift+alt+cmd+right";
+          command = "cursorWordPartRight";
+          when = "textInputFocus";
+        }
+      ];
+
       userSettings = {
         # global
         "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
