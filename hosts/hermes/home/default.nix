@@ -52,6 +52,7 @@ in {
     fzf.enable = true;
     spotify-player.enable = true;
     starship.enable = true;
+    vscode.profiles.default.enable = true;
     yazi.enable = true;
   };
 
