@@ -19,6 +19,7 @@ in
     inputs._1password-shell-plugins.hmModules.default
     inputs.catppuccin.homeModules.catppuccin
     inputs.nix-index-database.homeModules.nix-index
+    inputs.spicetify-nix.homeManagerModules.spicetify
 
     ../../../home-manager/config
     ../../../home-manager/programs
