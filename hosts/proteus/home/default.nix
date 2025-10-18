@@ -196,7 +196,7 @@ in {
     shellAliases = {
       # Nix aliases
       nix-darwin = ''nh darwin switch ~/nix-config#darwinConfigurations.$(hostname)'';
-      nix-home = "nh home switch ~/nix-config";
+      nix-home = "nh home switch ~/nix-config -b before-nix";
       nix-update = "nix flake update";
 
       cat = "${pkgs.bat}/bin/bat --paging=never";
