@@ -51,6 +51,7 @@ in
     bat.enable = true;
     fish.enable = true;
     fzf.enable = true;
+    k9s.enable = true;
     spotify-player.enable = true;
     starship.enable = true;
     vscode.profiles.default.enable = true;
@@ -61,8 +62,6 @@ in
     inherit stateVersion;
     inherit username;
     homeDirectory = if isDarwin then "/Users/${username}" else "/home/${username}";
-
-    file = { };
 
     preferXdgDirectories = true;
 
