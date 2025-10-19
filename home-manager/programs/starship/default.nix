@@ -12,6 +12,9 @@
 
       settings = {
         add_newline = true;
+        kubernetes = {
+          disabled = false;
+        };
       };
     };
   };

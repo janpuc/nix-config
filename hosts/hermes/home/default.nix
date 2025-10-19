@@ -73,8 +73,6 @@ in
         oci-cli
         # terraform
         opentofu
-        kubectl
-        k9s
         packer
         talosctl
         just
@@ -84,6 +82,11 @@ in
         pbzx
         aws-sso-cli
         yq-go
+
+        # Kubernetes
+        k9s
+        kubectl
+        kubectx
 
         # Nix
         nixd
@@ -202,6 +205,11 @@ in
       nix-darwin = ''nh darwin switch ~/nix-config#darwinConfigurations.$(hostname)'';
       nix-home = "nh home switch ~/nix-config";
       nix-update = "nix flake update";
+
+      # Kubernetes aliases
+      k = "kubectl";
+      kx = "kubectx";
+      ku = "kubectx -u";
 
       cat = "${pkgs.bat}/bin/bat --paging=never";
       less = "${pkgs.bat}/bin/bat";
