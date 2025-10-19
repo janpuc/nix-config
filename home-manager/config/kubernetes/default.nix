@@ -15,10 +15,10 @@ in
       set -e
       set -o pipefail
       ${op} account list | grep "my.1password.com"
-      ${op} inject -i "${config.home.homeDirectory}/.kube/config.tpl" -o "${config.home.homeDirectory}/.kube/config" --force
+      ${op} inject -i "${config.home.homeDirectory}/.kube/tpl/config.tpl" -o "${config.home.homeDirectory}/.kube/config" --force
     '';
     file = {
-      "${config.home.homeDirectory}/.kube/config.tpl" = {
+      "${config.home.homeDirectory}/.kube/tpl/config.tpl" = {
         source = yaml.generate "kubeconfig.yaml" {
           apiVersion = "v1";
           kind = "Config";
