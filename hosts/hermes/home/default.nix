@@ -78,10 +78,12 @@ in
         just
 
         alejandra
-        saml2aws
         pbzx
-        aws-sso-cli
         yq-go
+
+        # AWS
+        aws-sso-cli
+        saml2aws
 
         # Kubernetes
         k9s
