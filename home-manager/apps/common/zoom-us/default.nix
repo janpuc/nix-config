@@ -2,7 +2,7 @@
 {
   home = {
     packages = with pkgs; [
-      zoom-us
+      unstable.zoom-us
     ];
   };
 }
