@@ -7,7 +7,7 @@
   programs.vscode = {
     enable = true;
     # package = pkgs.vscodium; # INFO: Switch to plain VSCode before I figure out how to add cpp, copilot etc. to VSCodium
-    package = pkgs.vscode;
+    package = pkgs.unstable.vscode;
 
     profiles.default = {
       enableUpdateCheck = false;
