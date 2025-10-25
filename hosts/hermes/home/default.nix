@@ -83,6 +83,8 @@ in
 
         # AWS
         aws-sso-cli
+        gimme-aws-creds
+        unstable.okta-aws-cli
         saml2aws
 
         # Kubernetes
@@ -93,6 +95,9 @@ in
         # Nix
         nixd
         nixfmt-rfc-style
+
+        # Misc
+        speedtest-go # Terminal speedtest.net
 
         # sketchybar
         #asciicam # Terminal webcam #TODO: Move to linux only
@@ -157,7 +162,6 @@ in
         # rclone # Modern Unix `rsync`
         # rsync # Traditional `rsync`
         # sd # Modern Unix `sed`
-        # speedtest-go # Terminal speedtest.net
         # terminal-parrot # Terminal ASCII parrot
         #timer # Terminal timer
         # tldr # Modern Unix `man`
