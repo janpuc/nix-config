@@ -289,6 +289,8 @@
         "com.apple.TimeMachine".DoNotOfferNewDisksForBackup = true;
         # Turn on app auto-update
         "com.apple.commerce".autoUpdate = true;
+        # Turn off Sclack auto updates
+        "com.tinyspeck.slackmacgap".SlackNoAutoUpdates = true;
         NSGlobalDomain = {
           NSStatusItemSelectionPadding = 6;
           NSStatusItemSpacing = 6;
