@@ -2,7 +2,7 @@
 {
   home = {
     packages = with pkgs; [
-      brewCasks.proton-vpn
+      brewCasks.protonvpn
     ];
   };
 }

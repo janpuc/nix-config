@@ -290,7 +290,7 @@
         # Turn on app auto-update
         "com.apple.commerce".autoUpdate = true;
         # Turn off Sclack auto updates
-        "com.tinyspeck.slackmacgap".SlackNoAutoUpdates = true;
+        "com.tinyspeck.slackmacgap".AutoUpdate = false;
         NSGlobalDomain = {
           NSStatusItemSelectionPadding = 6;
           NSStatusItemSpacing = 6;
