@@ -40,6 +40,7 @@ in
     ../../../home-manager/apps/darwin/microsoft-teams
     ../../../home-manager/apps/darwin/orbstack
     ../../../home-manager/apps/darwin/proton-drive
+    ../../../home-manager/apps/darwin/proton-vpn
     ../../../home-manager/apps/darwin/raycast
     ../../../home-manager/apps/darwin/steam
     ../../../home-manager/apps/darwin/utm
