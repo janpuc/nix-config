@@ -58,6 +58,9 @@
 
   system = {
     activationScripts.postActivation.text = ''
+      # Turn off Slack auto updates
+      /usr/bin/defaults write /Library/Preferences/com.tinyspeck.slackmacgap.plist AutoUpdate -bool false
+
       # Following line should allow us to avoid a logout/login cycle when changing settings
       sudo -u ${username} /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
     '';
@@ -193,6 +196,32 @@
         # Keyboard Shortcuts
         "com.apple.symbolichotkeys" = {
           AppleSymbolicHotKeys = {
+            # Mission Control -> Mission Control -> Move left a space
+            "79" = {
+              enabled = true;
+              value = {
+                # Ctrl + Left Arrow
+                parameters = [
+                  65535
+                  123
+                  8650752
+                ];
+                type = "standard";
+              };
+            };
+            # Mission Control -> Mission Control -> Move right a space
+            "81" = {
+              enabled = true;
+              value = {
+                # Ctrl + Right Arrow
+                parameters = [
+                  65535
+                  124
+                  8650752
+                ];
+                type = "standard";
+              };
+            };
             # Windows -> General -> Fill
             "237" = {
               enabled = true;
@@ -289,8 +318,6 @@
         "com.apple.TimeMachine".DoNotOfferNewDisksForBackup = true;
         # Turn on app auto-update
         "com.apple.commerce".autoUpdate = true;
-        # Turn off Sclack auto updates
-        "com.tinyspeck.slackmacgap".AutoUpdate = false;
         NSGlobalDomain = {
           NSStatusItemSelectionPadding = 6;
           NSStatusItemSpacing = 6;
