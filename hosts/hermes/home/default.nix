@@ -90,6 +90,7 @@ in
         saml2aws
 
         # Kubernetes
+        fluxcd
         k9s
         kubectl
         kubectx
