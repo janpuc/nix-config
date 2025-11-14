@@ -3,7 +3,7 @@
   imports = [
     ./1password-shell-plugins
     ./aria2
-    # ./atuin
+    ./atuin
     ./awscli
     ./bash
     ./bat

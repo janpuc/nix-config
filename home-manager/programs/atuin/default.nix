@@ -1,7 +1,7 @@
 { ... }:
 {
   programs = {
-    aria2 = {
+    atuin = {
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
@@ -13,11 +13,9 @@
       settings = {
         auto_sync = true;
         sync_frequency = "5m";
-        sync_address = "https://api.atuin.sh";
+        sync_address = "https://atuin.janpuc.com";
         search_mode = "prefix";
       };
-
-      # themes = {};
     };
   };
 }
