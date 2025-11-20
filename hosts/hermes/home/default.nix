@@ -36,6 +36,7 @@ in
     ../../../home-manager/apps/common/zoom-us
 
     # Darwin apps
+    ../../../home-manager/apps/darwin/balena-etcher
     ../../../home-manager/apps/darwin/bambu-studio
     ../../../home-manager/apps/darwin/beeper
     ../../../home-manager/apps/darwin/microsoft-teams
