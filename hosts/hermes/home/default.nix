@@ -26,6 +26,7 @@ in
     ../../../home-manager/scripts
 
     # Common apps
+    ../../../home-manager/apps/common/discord
     ../../../home-manager/apps/common/ghostty
     # ../../../home-manager/apps/common/lens
     ../../../home-manager/apps/common/obsidian
