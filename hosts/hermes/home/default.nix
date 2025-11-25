@@ -101,6 +101,7 @@ in
         nixfmt-rfc-style
 
         # Misc
+        gum # Tasty Bubble Gum for your shell
         mise # Env management
         speedtest-go # Terminal speedtest.net
 
