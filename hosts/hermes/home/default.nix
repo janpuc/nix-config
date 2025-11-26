@@ -96,6 +96,7 @@ in
         k9s
         kubectl
         kubectx
+        kubernetes-helm
         kustomize
 
         # Nix
