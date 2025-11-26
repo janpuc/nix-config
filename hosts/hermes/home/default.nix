@@ -105,6 +105,7 @@ in
         nixfmt-rfc-style
 
         # Misc
+        age # Modern file encryption
         gum # Tasty Bubble Gum for your shell
         minijinja # Template engine
         speedtest-go # Terminal speedtest.net
