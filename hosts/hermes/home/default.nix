@@ -93,6 +93,7 @@ in
 
         # Kubernetes
         fluxcd
+        helmfile
         k9s
         kubectl
         kubectx
