@@ -103,6 +103,7 @@ in
 
         # Misc
         gum # Tasty Bubble Gum for your shell
+        minijinja # Template engine
         speedtest-go # Terminal speedtest.net
 
         # sketchybar
