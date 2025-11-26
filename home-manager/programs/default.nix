@@ -17,6 +17,7 @@
     ./gpg
     ./home-manager
     ./jq
+    ./mise
     ./nix-index
     ./ripgrep
     ./spotify-player
