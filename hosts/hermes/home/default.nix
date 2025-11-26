@@ -105,6 +105,7 @@ in
         gum # Tasty Bubble Gum for your shell
         minijinja # Template engine
         speedtest-go # Terminal speedtest.net
+        retry # Modern Unix `while`
 
         # sketchybar
         #asciicam # Terminal webcam #TODO: Move to linux only
