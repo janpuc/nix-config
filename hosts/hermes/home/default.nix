@@ -46,6 +46,7 @@ in
     ../../../home-manager/apps/darwin/raycast
     ../../../home-manager/apps/darwin/steam
     ../../../home-manager/apps/darwin/utm
+    ../../../home-manager/apps/darwin/wifiman
   ];
 
   catppuccin = {

@@ -2,7 +2,7 @@
 {
   home = {
     packages = with pkgs; [
-      brewCasks.wifiman
+      brewCasks.bambu-studio
     ];
   };
 }
