@@ -95,6 +95,7 @@ in
         fluxcd
         helmfile
         k9s
+        krew
         kubectl
         kubectx
         kubernetes-helm
