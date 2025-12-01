@@ -34,6 +34,7 @@ in
     ../../../home-manager/apps/common/slack
     ../../../home-manager/apps/common/spotify
     ../../../home-manager/apps/common/vscode
+    ../../../home-manager/apps/common/wireguard
     ../../../home-manager/apps/common/zoom-us
 
     # Darwin apps
