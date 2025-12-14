@@ -96,6 +96,7 @@ in
         helmfile
         k9s
         krew
+        krr
         kubectl
         kubectx
         kubernetes-helm
