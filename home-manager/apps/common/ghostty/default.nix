@@ -10,6 +10,7 @@
         click-repeat-interval = 500
         auto-update-channel = stable
         theme = Catppuccin Mocha
+        #background-blur = macos-glass-regular
       '';
       force = true;
     };
