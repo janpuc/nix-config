@@ -111,6 +111,7 @@ in
 
         # Misc
         age # Modern file encryption
+        cocoapods
         gum # Tasty Bubble Gum for your shell
         minijinja # Template engine
         mtr # Network diagnostic tool
