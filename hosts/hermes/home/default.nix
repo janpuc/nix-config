@@ -91,6 +91,10 @@ in
         unstable.okta-aws-cli
         saml2aws
 
+        # JavaScript/TypeScript
+        bun
+        nodejs_24
+
         # Kubernetes
         fluxcd
         helmfile

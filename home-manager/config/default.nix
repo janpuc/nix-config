@@ -4,7 +4,7 @@
     ./apps
     ./development
     ./keybindings
-    ./kubernetes
+    # ./kubernetes
     ./oci
   ];
 }
