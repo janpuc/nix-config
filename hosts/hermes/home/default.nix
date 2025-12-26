@@ -115,6 +115,7 @@ in
         gum # Tasty Bubble Gum for your shell
         minijinja # Template engine
         mtr # Network diagnostic tool
+        parallel # Modern Unix `xargs`
         speedtest-go # Terminal speedtest.net
         retry # Modern Unix `while`
 
