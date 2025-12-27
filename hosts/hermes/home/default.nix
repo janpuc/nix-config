@@ -60,6 +60,7 @@ in
     starship.enable = true;
     vscode.profiles.default.enable = true;
     yazi.enable = true;
+    zed.enable = true;
   };
 
   home = {
@@ -108,6 +109,7 @@ in
         # Nix
         nixd
         nixfmt-rfc-style
+        nil
 
         # Misc
         age # Modern file encryption
