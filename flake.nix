@@ -1,7 +1,7 @@
 {
   description = "Nix for macOS configuration";
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.2505.*";
+    nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.2511.*";
     nixpkgs-unstable.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0";
 
     _1password-shell-plugins.url = "github:1Password/shell-plugins";
@@ -13,9 +13,9 @@
     brew-nix.url = "github:BatteredBunny/brew-nix";
     brew-nix.inputs.brew-api.follows = "brew-api";
 
-    catppuccin.url = "github:catppuccin/nix/release-25.05";
+    catppuccin.url = "github:catppuccin/nix/release-25.11";
 
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nh.url = "github:viperML/nh";
