@@ -28,12 +28,12 @@ in
     # Common apps
     ../../../home-manager/apps/common/discord
     ../../../home-manager/apps/common/ghostty
-    # ../../../home-manager/apps/common/lens
     ../../../home-manager/apps/common/obsidian
     ../../../home-manager/apps/common/prismlauncher
     ../../../home-manager/apps/common/slack
     ../../../home-manager/apps/common/spotify
     ../../../home-manager/apps/common/vscode
+    ../../../home-manager/apps/common/zed
     ../../../home-manager/apps/common/zoom-us
 
     # Darwin apps
