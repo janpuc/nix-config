@@ -4,7 +4,7 @@
     git = {
       enable = true;
       settings = {
-        aliases = {
+        alias = {
           a = "add -A";
           br = "branch";
           c = "commit";
