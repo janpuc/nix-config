@@ -113,6 +113,7 @@ in
 
         # Misc
         age # Modern file encryption
+        android-tools # Android SDK platform tools
         cocoapods
         gum # Tasty Bubble Gum for your shell
         minijinja # Template engine
