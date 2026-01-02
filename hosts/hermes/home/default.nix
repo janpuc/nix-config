@@ -122,6 +122,7 @@ in
         parallel # Modern Unix `xargs`
         speedtest-go # Terminal speedtest.net
         retry # Modern Unix `while`
+        vcpkg # C++ Library Manager for Windows, Linux, and macOS
 
         # sketchybar
         #asciicam # Terminal webcam #TODO: Move to linux only
