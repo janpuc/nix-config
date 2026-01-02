@@ -115,14 +115,15 @@ in
         age # Modern file encryption
         android-tools # Android SDK platform tools
         cocoapods
+        cmake # Cross-platform, open-source build system generator
         gum # Tasty Bubble Gum for your shell
         minijinja # Template engine
         mtr # Network diagnostic tool
         opencode # AI coding agent built for the terminal
         parallel # Modern Unix `xargs`
+        pkg-config # Tool that allows packages to find out information about other packages (wrapper script)
         speedtest-go # Terminal speedtest.net
         retry # Modern Unix `while`
-        pkg-config # Tool that allows packages to find out information about other packages (wrapper script)
 
         # sketchybar
         #asciicam # Terminal webcam #TODO: Move to linux only
