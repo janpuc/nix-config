@@ -122,7 +122,7 @@ in
         parallel # Modern Unix `xargs`
         speedtest-go # Terminal speedtest.net
         retry # Modern Unix `while`
-        vcpkg # C++ Library Manager for Windows, Linux, and macOS
+        pkg-config # Tool that allows packages to find out information about other packages (wrapper script)
 
         # sketchybar
         #asciicam # Terminal webcam #TODO: Move to linux only
