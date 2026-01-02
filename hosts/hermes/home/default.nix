@@ -114,6 +114,7 @@ in
         # Misc
         age # Modern file encryption
         android-tools # Android SDK platform tools
+        clang-tools # Standalone command line tools for C++ development
         cocoapods
         cmake # Cross-platform, open-source build system generator
         gum # Tasty Bubble Gum for your shell
