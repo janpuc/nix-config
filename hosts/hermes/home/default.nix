@@ -79,7 +79,7 @@ in
         # terraform
         opentofu
         packer
-        talosctl
+        unstable.talosctl
         just
 
         alejandra
