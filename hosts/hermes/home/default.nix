@@ -26,10 +26,10 @@ in
     ../../../home-manager/scripts
 
     # Common apps
-    ../../../home-manager/apps/common/discord
+    # ../../../home-manager/apps/common/discord
     ../../../home-manager/apps/common/ghostty
     ../../../home-manager/apps/common/obsidian
-    ../../../home-manager/apps/common/prismlauncher
+    # ../../../home-manager/apps/common/prismlauncher
     ../../../home-manager/apps/common/slack
     ../../../home-manager/apps/common/spotify
     ../../../home-manager/apps/common/vscode
@@ -37,13 +37,13 @@ in
     ../../../home-manager/apps/common/zoom-us
 
     # Darwin apps
-    ../../../home-manager/apps/darwin/bambu-studio
-    ../../../home-manager/apps/darwin/beeper
+    # ../../../home-manager/apps/darwin/bambu-studio
+    # ../../../home-manager/apps/darwin/beeper
     ../../../home-manager/apps/darwin/microsoft-teams
     ../../../home-manager/apps/darwin/orbstack
     ../../../home-manager/apps/darwin/proton-drive
     ../../../home-manager/apps/darwin/proton-vpn
-    ../../../home-manager/apps/darwin/raycast
+    # ../../../home-manager/apps/darwin/raycast
     ../../../home-manager/apps/darwin/steam
     ../../../home-manager/apps/darwin/utm
   ];
