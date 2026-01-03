@@ -39,13 +39,13 @@ in
     # Darwin apps
     # ../../../home-manager/apps/darwin/bambu-studio
     # ../../../home-manager/apps/darwin/beeper
-    ../../../home-manager/apps/darwin/microsoft-teams
+    # ../../../home-manager/apps/darwin/microsoft-teams
     ../../../home-manager/apps/darwin/orbstack
-    ../../../home-manager/apps/darwin/proton-drive
+    # ../../../home-manager/apps/darwin/proton-drive
     ../../../home-manager/apps/darwin/proton-vpn
     # ../../../home-manager/apps/darwin/raycast
     ../../../home-manager/apps/darwin/steam
-    ../../../home-manager/apps/darwin/utm
+    # ../../../home-manager/apps/darwin/utm
   ];
 
   catppuccin = {
@@ -120,6 +120,7 @@ in
         gum # Tasty Bubble Gum for your shell
         minijinja # Template engine
         mtr # Network diagnostic tool
+        ncdu
         opencode # AI coding agent built for the terminal
         parallel # Modern Unix `xargs`
         pkg-config # Tool that allows packages to find out information about other packages (wrapper script)
