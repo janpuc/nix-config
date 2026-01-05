@@ -121,7 +121,7 @@ in
         minijinja # Template engine
         mtr # Network diagnostic tool
         ncdu
-        opencode # AI coding agent built for the terminal
+        unstable.opencode # AI coding agent built for the terminal
         parallel # Modern Unix `xargs`
         pkg-config # Tool that allows packages to find out information about other packages (wrapper script)
         speedtest-go # Terminal speedtest.net
