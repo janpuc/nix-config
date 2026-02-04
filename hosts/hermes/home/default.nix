@@ -33,7 +33,7 @@ in
     ../../../home-manager/apps/common/slack
     ../../../home-manager/apps/common/spotify
     ../../../home-manager/apps/common/vscode
-    ../../../home-manager/apps/common/zed
+    # ../../../home-manager/apps/common/zed
     ../../../home-manager/apps/common/zoom-us
 
     # Darwin apps
@@ -60,7 +60,7 @@ in
     starship.enable = true;
     vscode.profiles.default.enable = true;
     yazi.enable = true;
-    zed.enable = true;
+    # zed.enable = true;
   };
 
   home = {
