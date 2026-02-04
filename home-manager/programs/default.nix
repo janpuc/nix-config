@@ -16,6 +16,7 @@
     ./gh
     ./git
     ./gpg
+    ./granted
     ./home-manager
     ./jq
     ./mise
