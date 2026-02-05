@@ -1,8 +1,7 @@
 { ... }:
 {
   imports = [
-    # ./awsx
-    # ./saml2inventory
-    # ./saml2yaml
+    ./awsx
+    ./aws-sync
   ];
 }

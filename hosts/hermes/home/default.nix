@@ -236,7 +236,7 @@ in
     };
     shellAliases = {
       # Nix aliases
-      nix-darwin = ''nh darwin switch ~/nix-config#darwinConfigurations.$(hostname)'';
+      nix-darwin = "nh darwin switch ~/nix-config#darwinConfigurations.$(hostname)";
       nix-home = "nh home switch ~/nix-config";
       nix-update = "nix flake update";
 
@@ -249,8 +249,9 @@ in
       less = "${pkgs.bat}/bin/bat";
       reload = "exec $SHELL -l";
       tree = "${pkgs.eza}/bin/eza --tree";
-      awsx = ''set -Ux AWS_PROFILE $(sed -n 's/\[profile \(.*\)\]/\1/gp' ~/.aws/config | ${pkgs.fzf}/bin/fzf)'';
+      ax = "awsx";
       awsu = "set -e AWS_PROFILE";
+      au = "set -e AWS_PROFILE";
       unset = "set -e";
       unexport = "set -e";
 
