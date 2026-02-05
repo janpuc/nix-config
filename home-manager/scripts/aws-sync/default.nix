@@ -121,7 +121,7 @@ let
                 echo "granted_sso_account_id = ''${ID}"
                 echo "granted_sso_role_name = ''${ROLE}"
                 echo "common_fate_generated_from = aws-sso"
-                echo "credential_process = ${pkgs.granted}/bin/granted credential-process --profile ''${PROFILE}"
+                echo "credential_process = granted credential-process --auto-login --profile ''${PROFILE}"
             } >> "$CONFIG_FILE"
         else
             ARN=$(echo "$row" | ${pkgs.jq}/bin/jq -r '.role_arn')

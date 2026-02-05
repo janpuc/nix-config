@@ -102,7 +102,6 @@ in
         k9s
         krew
         kubectl
-        kubectx
         kubernetes-helm
         kustomize
 
