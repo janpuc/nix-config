@@ -244,13 +244,17 @@ in
       kx = "kubectx";
       ku = "kubectx -u";
 
+      # AWS aliases
+      ax = "awsx";
+      awsu = "set -e AWS_PROFILE";
+      au = "set -e AWS_PROFILE";
+      awso = "assume -ar";
+      ao = "assume -ar";
+
       cat = "${pkgs.bat}/bin/bat --paging=never";
       less = "${pkgs.bat}/bin/bat";
       reload = "exec $SHELL -l";
       tree = "${pkgs.eza}/bin/eza --tree";
-      ax = "awsx";
-      awsu = "set -e AWS_PROFILE";
-      au = "set -e AWS_PROFILE";
       unset = "set -e";
       unexport = "set -e";
 

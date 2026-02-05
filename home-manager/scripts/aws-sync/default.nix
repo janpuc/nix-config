@@ -129,7 +129,7 @@ let
             
             {
                 echo "region = us-east-1"
-                echo "credential_process = ${pkgs._1password-cli}/bin/op run --env-file=''${ENV_FILE} -- ${pkgs.saml2aws}/bin/saml2aws login --credential-process --idp-account=''${ORG} --role=''${ARN}"
+                echo "credential_process = ${pkgs._1password-cli}/bin/op run --env-file=''${ENV_FILE} -- ${pkgs.saml2aws}/bin/saml2aws login --credential-process --idp-account=''${ORG} --role=''${ARN} 2>/dev/null"
             } >> "$CONFIG_FILE"
         fi
     done
