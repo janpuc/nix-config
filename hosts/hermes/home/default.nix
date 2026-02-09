@@ -92,6 +92,9 @@ in
         unstable.okta-aws-cli
         saml2aws
 
+        # Golang
+        go
+
         # JavaScript/TypeScript
         bun
         nodejs_24
