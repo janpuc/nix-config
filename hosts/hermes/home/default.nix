@@ -33,7 +33,7 @@ in
     ../../../home-manager/apps/common/slack
     ../../../home-manager/apps/common/spotify
     ../../../home-manager/apps/common/vscode
-    # ../../../home-manager/apps/common/zed
+    ../../../home-manager/apps/common/zed
     ../../../home-manager/apps/common/zoom-us
 
     # Darwin apps
@@ -41,9 +41,7 @@ in
     ../../../home-manager/apps/darwin/beeper
     ../../../home-manager/apps/darwin/microsoft-teams
     ../../../home-manager/apps/darwin/orbstack
-    # ../../../home-manager/apps/darwin/proton-drive
     ../../../home-manager/apps/darwin/proton-vpn
-    # ../../../home-manager/apps/darwin/raycast
     ../../../home-manager/apps/darwin/steam
     ../../../home-manager/apps/darwin/utm
   ];
@@ -60,7 +58,7 @@ in
     starship.enable = true;
     vscode.profiles.default.enable = true;
     yazi.enable = true;
-    # zed.enable = true;
+    zed.enable = true;
   };
 
   home = {
@@ -75,8 +73,6 @@ in
     packages =
       with pkgs;
       [
-        oci-cli
-        # terraform
         opentofu
         packer
         unstable.talosctl
@@ -233,8 +229,6 @@ in
       SSH_AUTH_SOCK = "~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock";
       SYSTEMD_EDITOR = "nano";
       VISUAL = "nano";
-
-      OCI_CLI_RC_FILE = "~/.config/oci/config";
     };
     shellAliases = {
       # Nix aliases
@@ -260,8 +254,6 @@ in
       tree = "${pkgs.eza}/bin/eza --tree";
       unset = "set -e";
       unexport = "set -e";
-
-      oci = ''op run --no-masking --env-file="/Users/${username}/.config/oci/op.env" -- oci'';
     };
   };
 
