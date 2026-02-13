@@ -41,6 +41,7 @@ in
     ../../../home-manager/apps/darwin/beeper
     ../../../home-manager/apps/darwin/microsoft-teams
     ../../../home-manager/apps/darwin/orbstack
+    ../../../home-manager/apps/darwin/orion
     ../../../home-manager/apps/darwin/proton-vpn
     ../../../home-manager/apps/darwin/steam
     ../../../home-manager/apps/darwin/utm
