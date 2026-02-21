@@ -270,7 +270,7 @@ in
       inputs.brew-nix.overlays.default
 
       outputs.overlays.additions
-      #outputs.overlays.modifications
+      outputs.overlays.modifications
       outputs.overlays.unstable-packages
     ];
     # Configure your nixpkgs instance
