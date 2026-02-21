@@ -60,6 +60,7 @@
         # global
         "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
         "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
+        "window.nativeTabs" = true;
         # nix
         "[nix]" = {
           "editor.formatOnPaste" = true;
