@@ -85,6 +85,7 @@ in
 
         # AWS
         aws-sso-cli
+        eksctl
         gimme-aws-creds
         unstable.okta-aws-cli
         saml2aws
