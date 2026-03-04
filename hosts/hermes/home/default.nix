@@ -42,6 +42,7 @@ in
     ../../../home-manager/apps/darwin/microsoft-teams
     ../../../home-manager/apps/darwin/orbstack
     ../../../home-manager/apps/darwin/orion
+    ../../../home-manager/apps/darwin/osaurus
     ../../../home-manager/apps/darwin/proton-vpn
     ../../../home-manager/apps/darwin/steam
     ../../../home-manager/apps/darwin/utm
@@ -126,6 +127,7 @@ in
         pkg-config # Tool that allows packages to find out information about other packages (wrapper script)
         speedtest-go # Terminal speedtest.net
         retry # Modern Unix `while`
+        unstable.ollama
 
         # sketchybar
         #asciicam # Terminal webcam #TODO: Move to linux only
