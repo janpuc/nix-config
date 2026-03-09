@@ -35,12 +35,7 @@ fi
 info "Checking for Nix installation..."
 if ! command -v nix &>/dev/null; then
     info "Nix not found. Installing Nix..."
-    ## This doesn't work for some reason.
     curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate --no-confirm
-    #curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix/tag/v3.11.3/nix-installer-aarch64-darwin -o nix-install
-    chmod +x nix-install
-    ./nix-install install --determinate --no-confirm
-    rm -rf nix-install
     . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 else
     info "Nix is already installed."
