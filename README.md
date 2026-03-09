@@ -4,33 +4,10 @@
 ```
 
 TODO:
-- [ ] Git setup
-- [ ] AWS configs
-- [ ] K8s Configs
-- [ ] Custom pkgs
-- [ ] VSCode settings
-- [ ] Shell settings
-- [ ] Secrets (1pass)
-- [ ] Dir backups (Development etc.) - using kopia and KopiaUI
-- [ ] Defaults
-- [ ] Apps:
-  - [x] 1Password
-  - [x] Bambu Studio
-  - [x] Beeper
-  - [x] Ghostty
-  - [x] Lens
-  - [x] Microsoft Teams
-  - [x] Obsidian
-  - [x] OrbStack
-  - [x] Proton Drive
-  - [x] Raycast
-  - [x] Slack
-  - [x] Spotify
-  - [x] Steam
-  - [x] Tailscale
-  - [x] UTM
-  - [x] VSCode
-  - [x] Zoom US
+- [ ] Smart `Development` directory sync
+- [ ] App/Package disable/enable mechanism
+- [ ] GKE clusters
+- [ ] GlobalProtect app
 
 Hostnames:
 - [ ] Sisyphus - Work MBP
