@@ -1,7 +1,5 @@
 {
-  config,
   inputs,
-  isWorkstation,
   lib,
   outputs,
   pkgs,
@@ -21,18 +19,21 @@ in
     inputs._1password-shell-plugins.hmModules.default
     inputs.catppuccin.homeModules.catppuccin
     inputs.nix-index-database.homeModules.nix-index
+    inputs.spicetify-nix.homeManagerModules.spicetify
 
     ../../../home-manager/config
     ../../../home-manager/programs
     ../../../home-manager/scripts
 
     # Common apps
+    ../../../home-manager/apps/common/discord
     ../../../home-manager/apps/common/ghostty
-    ../../../home-manager/apps/common/lens
     ../../../home-manager/apps/common/obsidian
+    ../../../home-manager/apps/common/prismlauncher
     ../../../home-manager/apps/common/slack
     ../../../home-manager/apps/common/spotify
     ../../../home-manager/apps/common/vscode
+    ../../../home-manager/apps/common/zed
     ../../../home-manager/apps/common/zoom-us
 
     # Darwin apps
@@ -40,8 +41,9 @@ in
     ../../../home-manager/apps/darwin/beeper
     ../../../home-manager/apps/darwin/microsoft-teams
     ../../../home-manager/apps/darwin/orbstack
-    ../../../home-manager/apps/darwin/proton-drive
-    ../../../home-manager/apps/darwin/raycast
+    ../../../home-manager/apps/darwin/orion
+    ../../../home-manager/apps/darwin/osaurus
+    ../../../home-manager/apps/darwin/proton-vpn
     ../../../home-manager/apps/darwin/steam
     ../../../home-manager/apps/darwin/utm
   ];
@@ -49,20 +51,22 @@ in
   catppuccin = {
     accent = "blue";
     flavor = "mocha";
+    atuin.enable = true;
     bat.enable = true;
     fish.enable = true;
     fzf.enable = true;
+    k9s.enable = true;
     spotify-player.enable = true;
     starship.enable = true;
+    vscode.profiles.default.enable = true;
     yazi.enable = true;
+    zed.enable = true;
   };
 
   home = {
     inherit stateVersion;
     inherit username;
     homeDirectory = if isDarwin then "/Users/${username}" else "/home/${username}";
-
-    file = { };
 
     preferXdgDirectories = true;
 
@@ -71,20 +75,60 @@ in
     packages =
       with pkgs;
       [
-        oci-cli
-        # terraform
         opentofu
-        kubectl
-        k9s
         packer
-        talosctl
+        unstable.talosctl
         just
 
         alejandra
-        saml2aws
         pbzx
-        aws-sso-cli
         yq-go
+
+        # AWS
+        aws-sso-cli
+        eksctl
+        gimme-aws-creds
+        unstable.okta-aws-cli
+        saml2aws
+
+        # Golang
+        go
+
+        # JavaScript/TypeScript
+        bun
+        nodejs_24
+
+        # Kubernetes
+        fluxcd
+        helmfile
+        k9s
+        krew
+        kubectl
+        kubernetes-helm
+        kustomize
+
+        # Nix
+        nixd
+        nixfmt-rfc-style
+        nil
+
+        # Misc
+        age # Modern file encryption
+        android-tools # Android SDK platform tools
+        clang-tools # Standalone command line tools for C++ development
+        cocoapods
+        cmake # Cross-platform, open-source build system generator
+        gum # Tasty Bubble Gum for your shell
+        minijinja # Template engine
+        mtr # Network diagnostic tool
+        ncdu
+        unstable.opencode # AI coding agent built for the terminal
+        parallel # Modern Unix `xargs`
+        pkg-config # Tool that allows packages to find out information about other packages (wrapper script)
+        speedtest-go # Terminal speedtest.net
+        retry # Modern Unix `while`
+        unstable.ollama
+
         # sketchybar
         #asciicam # Terminal webcam #TODO: Move to linux only
         #asciinema-agg # Convert aciinema to .gif
@@ -148,7 +192,6 @@ in
         # rclone # Modern Unix `rsync`
         # rsync # Traditional `rsync`
         # sd # Modern Unix `sed`
-        # speedtest-go # Terminal speedtest.net
         # terminal-parrot # Terminal ASCII parrot
         #timer # Terminal timer
         # tldr # Modern Unix `man`
@@ -190,24 +233,31 @@ in
       SSH_AUTH_SOCK = "~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock";
       SYSTEMD_EDITOR = "nano";
       VISUAL = "nano";
-
-      OCI_CLI_RC_FILE = "~/.config/oci/config";
     };
     shellAliases = {
       # Nix aliases
       nix-darwin = "nh darwin switch ~/nix-config#darwinConfigurations.$(hostname)";
-      nix-home = "nh home switch ~/nix-config -b before-nix";
+      nix-home = "nh home switch ~/nix-config";
       nix-update = "nix flake update";
+
+      # Kubernetes aliases
+      k = "kubectl";
+      kx = "kubectx";
+      ku = "kubectx -u";
+
+      # AWS aliases
+      ax = "awsx";
+      awsu = "set -e AWS_PROFILE";
+      au = "set -e AWS_PROFILE";
+      awso = "assume -ar";
+      ao = "assume -ar";
 
       cat = "${pkgs.bat}/bin/bat --paging=never";
       less = "${pkgs.bat}/bin/bat";
       reload = "exec $SHELL -l";
       tree = "${pkgs.eza}/bin/eza --tree";
-      awsu = "set -e AWS_PROFILE";
       unset = "set -e";
       unexport = "set -e";
-
-      oci = ''op run --no-masking --env-file="/Users/${username}/.config/oci/op.env" -- oci'';
     };
   };
 
@@ -223,7 +273,7 @@ in
       inputs.brew-nix.overlays.default
 
       outputs.overlays.additions
-      #outputs.overlays.modifications
+      outputs.overlays.modifications
       outputs.overlays.unstable-packages
     ];
     # Configure your nixpkgs instance
