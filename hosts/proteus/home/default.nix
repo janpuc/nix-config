@@ -29,11 +29,11 @@ in
     ../../../home-manager/apps/common/discord
     ../../../home-manager/apps/common/ghostty
     ../../../home-manager/apps/common/obsidian
-    ../../../home-manager/apps/common/prismlauncher
+    # ../../../home-manager/apps/common/prismlauncher
     ../../../home-manager/apps/common/slack
     ../../../home-manager/apps/common/spotify
     ../../../home-manager/apps/common/vscode
-    ../../../home-manager/apps/common/zed
+    # ../../../home-manager/apps/common/zed
     ../../../home-manager/apps/common/zoom-us
 
     # Darwin apps
@@ -42,10 +42,10 @@ in
     ../../../home-manager/apps/darwin/microsoft-teams
     ../../../home-manager/apps/darwin/orbstack
     ../../../home-manager/apps/darwin/orion
-    ../../../home-manager/apps/darwin/osaurus
+    # ../../../home-manager/apps/darwin/osaurus
     ../../../home-manager/apps/darwin/proton-vpn
     ../../../home-manager/apps/darwin/steam
-    ../../../home-manager/apps/darwin/utm
+    # ../../../home-manager/apps/darwin/utm
   ];
 
   catppuccin = {
